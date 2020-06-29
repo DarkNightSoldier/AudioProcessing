@@ -1,2 +1,2 @@
 # AudioProcessing
-WAV Manipulation Program for Colab Jupyter Notebook.
+WAV Manipulation Program for Colab Colaboratory Notebook.
