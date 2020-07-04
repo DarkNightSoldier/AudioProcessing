@@ -3,12 +3,7 @@ import numpy as np
 import IPython.display as ipd
 from scipy.fftpack import *
 import matplotlib.pyplot as plt
-
-# Creado: 3rd July 2020
-#         por: Alejandro Higuera Castro
-
-# Módulo para la edicion de audio en formato WAV
-# Usa las funciones de la libreria Numpy y Scipy para la edición de audio
+import math
 
 def playAudio(file):
     """
@@ -21,7 +16,7 @@ def playAudio(file):
         Nombre del archivo en formato .wav que contiene audio en formato
         mono o estéreo.
     """
-    ipd.audio(file)
+    return ipd.Audio(file)
 
 def ReadAudio(file):
     """
@@ -33,11 +28,20 @@ def ReadAudio(file):
     file: string
         Nombre del archivo en formato .wav que contiene audio en formato
         mono o estéreo.
+
+    Retorna
+    --------
+    List:
+        [rate,data]
+    rate: int
+        Muestras por segundo
+    data: numpy ndarray
+        Matriz con audio en mono o estéreo
     """
     rate,data=wavfile.read(file)
     return [rate,data]
 
-def WriteAudio(filename,matrix,rate):
+def WriteAudio(filename,rate,matrix):
     """
     Escribe un archivo de audio .wav a partir de una matriz numpy con los datos
     del audio en mono o estéreo y la tasa de muestras por segundo.
@@ -50,41 +54,17 @@ def WriteAudio(filename,matrix,rate):
         Matriz con audio en mono o estéreo.
     rate: int
         Tasa de muestras por minuto del audio.
+
+    Retorna
+    --------
+    List:
+        [rate,data]
+    rate: int
+        Muestras por segundo
+    data: numpy ndarray
+        Matriz con audio en mono o estéreo
     """
     wavfile.write(filename,rate,matrix)
-
-def ConvertToMono(file):
-    """
-    Retorna un array de Numpy con la matriz de audio convertida a mono con el
-    mismo dtype de Numpy que el original.
-
-    Parámetros
-    ----------
-    file: string
-        Nombre del archivo en formato .wav que contiene audio en formato
-        mono o estéreo.
-    """
-    #Se procede a leer el audio
-    rate,data=ReadAudio(file)
-    canales=data.shape[1]
-
-    if canales==1:
-        pass
-    #En caso de que el audio sea de formato estéreo procede a su conversión
-    elif canales==2:
-        mono=[]
-        stereo_dtype=data.dtype
-        #Se obtienen los vectores correspondientes a cada canal de audio
-        l=data[:,0]
-        r=data[:,1]
-        data=data.astype(float)
-        #Se suma cada canal de audio para obtener uno solo
-        for i in range(len(original)):
-            d=(l[i]/2)+(r[i]/2)
-            mono.append(d)
-        data=np.array(mono,dtype=stereo_dtype)
-        WriteAudio(file,rate,data)
-    print(f"El archivo se convirtió con éxito y se guardó como {file}")
 
 def Speed_Rep(input_filename,speed,output_filename):
     """
@@ -99,12 +79,75 @@ def Speed_Rep(input_filename,speed,output_filename):
         Velocidad con la que se va a reproducir el audio de destino.
     output_filename: string
          Nombre o localización/path del archivo .wav de salida
+
+    Retorna
+    ----------
+    Reproductor en pantalla de iPython con el audio con la velocidad deseada.
+
     """
-    data,rate=ReadAudio(file)
-    actual_speed=1/speed
-    wavfile.write(output_filename,int(rate/Velocidad),data)
+    rate,data=ReadAudio(input_filename)
+    WriteAudio(output_filename,int(rate*speed),data)
     print(f"El archivo se guardo con éxito como {output_filename}")
-    playAudio(output_filename)
+    return playAudio(output_filename)
+
+def Inverse_Rep(input_filename,output_filename):
+    """
+    Muestra en pantalla el reproductor de audio y guarda el audio reproducido
+    desde atrás en el archivo .wav estipulado.
+
+    Parámetros
+    ----------
+    input_filename: string
+         Nombre o localización/path del archivo .wav de entrada.
+    output_filename: string
+         Nombre o localización/path del archivo .wav de salida
+    """
+
+    rate,data=ReadAudio(input_filename)
+    #Convertimos a mono el audio original
+    data=ConvertToMono(data)
+    #Leemos la matriz desde atrás usando la notación de slicing de listas
+    WriteAudio(output_filename,rate,data[::-1])
+    print(f"El archivo se guardo con éxito como {output_filename}")
+    return playAudio(output_filename)
+
+def ConvertToMono(data):
+    """
+    Retorna un array de Numpy con la matriz de audio convertida a mono con el
+    mismo dtype de Numpy que el original.
+
+    Parámetros
+    ----------
+    data: numpy ndarray
+        Matriz de Numpy que contiene audio en formato mono o estéreo.
+
+    Retorna
+    ----------
+    mono: numpy ndarray
+        Matriz de Numpy que contiene audio en mono.
+    """
+    #Se procede a leer el audio
+    if len(data.shape)==1:
+        canales=1
+    else:
+        canales=data.shape[1]
+
+    if canales==1:
+        mono=data
+    #En caso de que el audio sea de formato estéreo procede a su conversión
+    elif canales==2:
+        mono=[]
+        stereo_dtype=data.dtype
+        #Se obtienen los vectores correspondientes a cada canal de audio
+        l=data[:,0]
+        r=data[:,1]
+        #Se suma cada canal de audio para obtener uno solo
+        for i in range(len(data)):
+            d=(l[i]/2)+(r[i]/2)
+            mono.append(d)
+        mono=np.array(mono,dtype=stereo_dtype)
+    return mono
+
 
 def Lowpass(data,alpha):
     """
@@ -154,16 +197,59 @@ def Frequency_Cutoff(type,frequency,input_filename,output_filename):
 
     Parámetros
     ----------
-    type: string
+    type: string (low or high)
         Tipo de filtro (Paso bajo o paso alto).
     frequency: float
-        Frecuencia de corte para aplicación de filtro.
+        Frecuencia (Hz) de corte para aplicación de filtro.
     input_filename: string
          Nombre o localización/path del archivo .wav de entrada.
     output_filename: string
          Nombre o localización/path del archivo .wav de salida
     """
-    pass
+    rate,data=ReadAudio(input_filename)
+    dt=1/rate
+    RC=1/(2*math.pi*frequency)
+    alpha=dt/(dt+RC)
+
+    print(alpha)
+
+    if type=="low":
+        data_f=Lowpass(data,alpha)
+    elif type=="high":
+        data_f=Highpass(data,alpha)
+    WriteAudio(output_filename,rate,data_f)
+    print(f"El archivo se guardo con éxito como {output_filename}")
+
+def Combinar_Audios(audio1,audio2,output_filename):
+    """
+    Muestra en pantalla el reproductor de audio y guarda el audio que combina
+    los dos audios de entrada.
+
+    Parámetros
+    ----------
+    audio1: string
+         Nombre o localización/path del archivo .wav de entrada.
+    audio2: string
+         Nombre o localización/path del archivo .wav de entrada.
+    output_filename: string
+         Nombre o localización/path del archivo .wav de salida
+    """
+    rate_1,data_1=ReadAudio(audio1)
+    rate_2,data_2=ReadAudio(audio2)
+
+    if len(data_1)>len(data_2):
+        base_data=data_1.copy()
+        insert_data=data_2.copy()
+    else:
+        base_data=data_2.copy()
+        insert_data=data_1.copy()
+
+    for i in range (0,int(len(insert_data))):
+        base_data[i]=base_data[i]/2+insert_data[i]/2
+        
+    WriteAudio(output_filename,(rate_1+rate_2)//2,base_data)
+    print(f"El archivo se guardo con éxito como {output_filename}")
+    return playAudio(output_filename)
 
 def FFT_Graphing(Graph_Title,data_1,rate_1,audio1_title,data_2,rate_2,audio2_title):
     """
@@ -188,15 +274,21 @@ def FFT_Graphing(Graph_Title,data_1,rate_1,audio1_title,data_2,rate_2,audio2_tit
     audio2_title: string
         Nombre a mostrar en la gráfica.
     """
-    plt.title("Graph_Title")
+    plt.title(Graph_Title)
     plt.xlabel("Frecuencia (Hz)")
     plt.ylabel("Amplitud")
 
     fft_data_1=abs(fft(data_1))
     frecs_1=fftfreq(len(fft_data_1),(1/rate_1))
-    plt.plot(frecs_1[:(len(fft_data_1)//2)],fft_data_1[:(len(fft_data_1)//2)])
+    x1=frecs_1[:(len(fft_data_1)//2)]
+    y1=fft_data_1[:(len(fft_data_1)//2)]
 
     fft_data_2=abs(fft(data_2))
     frecs_2=fftfreq(len(fft_data_2),(1/rate_2))
-    plt.plot(freqs[:(len(fft_data_2)//2)],fft_data_2[:(len(fft_data_2)//2)])
+    x2=frecs_2[:(len(fft_data_2)//2)]
+    y2=fft_data_2[:(len(fft_data_2)//2)]
+
+    plt.plot(x1,y1,color="r",label=audio1_title)
+    plt.plot(x2,y2,color="g",label=audio2_title)
+    plt.legend(loc='upper right', borderaxespad=0.)
     plt.show()
