@@ -28,14 +28,14 @@ def ReadAudio(file):
     file: string
         Nombre del archivo en formato .wav que contiene audio en formato
         mono o estéreo.
-
+        
     Retorna
     --------
-    List:
+    List: 
         [rate,data]
-    rate: int
+    rate: int 
         Muestras por segundo
-    data: numpy ndarray
+    data: numpy ndarray 
         Matriz con audio en mono o estéreo
     """
     rate,data=wavfile.read(file)
@@ -54,14 +54,14 @@ def WriteAudio(filename,rate,matrix):
         Matriz con audio en mono o estéreo.
     rate: int
         Tasa de muestras por minuto del audio.
-
+    
     Retorna
     --------
-    List:
+    List: 
         [rate,data]
-    rate: int
+    rate: int 
         Muestras por segundo
-    data: numpy ndarray
+    data: numpy ndarray 
         Matriz con audio en mono o estéreo
     """
     wavfile.write(filename,rate,matrix)
@@ -79,7 +79,7 @@ def Speed_Rep(input_filename,speed,output_filename):
         Velocidad con la que se va a reproducir el audio de destino.
     output_filename: string
          Nombre o localización/path del archivo .wav de salida
-
+    
     Retorna
     ----------
     Reproductor en pantalla de iPython con el audio con la velocidad deseada.
@@ -102,7 +102,7 @@ def Inverse_Rep(input_filename,output_filename):
     output_filename: string
          Nombre o localización/path del archivo .wav de salida
     """
-
+    
     rate,data=ReadAudio(input_filename)
     #Convertimos a mono el audio original
     data=ConvertToMono(data)
@@ -120,7 +120,7 @@ def ConvertToMono(data):
     ----------
     data: numpy ndarray
         Matriz de Numpy que contiene audio en formato mono o estéreo.
-
+    
     Retorna
     ----------
     mono: numpy ndarray
@@ -129,7 +129,7 @@ def ConvertToMono(data):
     #Se procede a leer el audio
     if len(data.shape)==1:
         canales=1
-    else:
+    else:  
         canales=data.shape[1]
 
     if canales==1:
@@ -212,7 +212,7 @@ def Frequency_Cutoff(type,frequency,input_filename,output_filename):
     alpha=dt/(dt+RC)
 
     print(alpha)
-
+    
     if type=="low":
         data_f=Lowpass(data,alpha)
     elif type=="high":
@@ -222,18 +222,18 @@ def Frequency_Cutoff(type,frequency,input_filename,output_filename):
 
 def Combinar_Audios(audio1,audio2,output_filename):
     """
-    Muestra en pantalla el reproductor de audio y guarda el audio que combina
+    Muestra en pantalla el reproductor de audio y guarda el audio que combina 
     los dos audios de entrada.
-
+    
     Parámetros
     ----------
     audio1: string
          Nombre o localización/path del archivo .wav de entrada.
     audio2: string
-         Nombre o localización/path del archivo .wav de entrada.
+         Nombre o localización/path del archivo .wav de entrada.    
     output_filename: string
          Nombre o localización/path del archivo .wav de salida
-    """
+    """    
     rate_1,data_1=ReadAudio(audio1)
     rate_2,data_2=ReadAudio(audio2)
 
@@ -243,7 +243,7 @@ def Combinar_Audios(audio1,audio2,output_filename):
     else:
         base_data=data_2.copy()
         insert_data=data_1.copy()
-
+        
     for i in range (0,int(len(insert_data))):
         base_data[i]=base_data[i]/2+insert_data[i]/2
         
