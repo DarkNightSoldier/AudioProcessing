@@ -153,7 +153,7 @@ Donde:
 # [](#header-4a) 4.a) Ecualización de frecuencias bajas y altas.
 Para ello se selecciona un factor de filtro alpha y se aplica un filtro EMA LowPass/HighPass.
 
-##### Demostración:
+#### Demostración:
 ```python
 alpha = 0.2 #@param {type:"slider", min:0, max:1, step:0.01}
 rate,data=ReadAudio("Happy.wav")
@@ -163,7 +163,9 @@ data_low=Lowpass(data,alpha)
 data_high=Highpass(data,alpha)
 
 FFT_Graphing(f"FFT Original vs Low pass α={alpha}",data,rate,"Original",data_low,rate,"Lowpass")
+AudioGraphing(f"Original vs Low pass α={alpha}",data,rate,"Original",data_low,rate,"Lowpass")
 FFT_Graphing(f"FFT Original vs High pass α={alpha}",data,rate,"Original",data_high,rate,"Highpass")
+AudioGraphing(f"Original vs High pass α={alpha}",data,rate,"Original",data_high,rate,"Highpass")
 ```
 ![FFT Original VS Low Pass α=0.2](https://alejandrohiguera.codes/AudioProcessing/files/graph1.png)
 ![FFT Original VS High Pass α=0.2](https://alejandrohiguera.codes/AudioProcessing/files/graph2.png)
@@ -185,3 +187,28 @@ playAudio("lowpass.wav")
 ```
 *Highpass α=0.2*
 {% include Highpass.html %}
+
+# [](#header-4b) 4.b) Limpieza de ruido de alta frecuencia
+Para ello se establece una frecuencia (Hz) de corte y se procede a aplicar un filtro EMA de paso bajo.
+
+#### Demostración:
+```python
+fr=int(input("Especifique la frecuencia de corte en Hz  "))
+Frequency_Cutoff("low",fr,"hfnoise.wav","limpieza.wav")
+```
+**Especifique la frecuencia de corte en Hz  500**
+**α=0.2819698001234662**
+**El archivo se guardo con éxito como limpieza.wav**
+
+```python
+rate_1,data_1=ReadAudio("hfnoise.wav")
+data_1=ConvertToMono(data_1)
+
+rate_2,data_2=ReadAudio("limpieza.wav")
+data_2=ConvertToMono(data_2)
+
+FFT_Graphing("FFT Con Ruido VS Lowpass fc",data_1,rate_1,"Audio sin filtrar",data_2,rate_2,f"Lowpass {fr} Hz")
+AudioGraphing("Con Ruido VS Lowpass fc",data_1,rate_1,"Audio sin filtrar",data_2,rate_2,f"Lowpass {fr} Hz")
+```
+![FFT Ruido VS Low Pass 500 Hz](https://alejandrohiguera.codes/AudioProcessing/files/graph5.png)
+![Ruido VS Low Pass 500 Hz](https://alejandrohiguera.codes/AudioProcessing/files/graph6.png)
