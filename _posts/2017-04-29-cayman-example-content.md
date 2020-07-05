@@ -9,6 +9,30 @@ Para abrir el Notebook en **Google Colab**:
 
 # [](#header-1) 1. Reproducción de audio a velocidad normal:
 Él módulo incluye un reproductor de IPython Display, que se puede llamar fácilmente con la función: **playAudio("file.wav")**. Para la demostración se usó una parte de la canción Happy de Pharrel Williams en audio estéreo.
+
+##### Código de la función:
+```python
+def playAudio(file):
+    """
+    Muestra en pantalla el reproductor de iPython Display para un archivo de
+    formato .wav.
+
+    Parámetros
+    ----------
+    file: string
+        Nombre del archivo en formato .wav que contiene audio en formato
+        mono o estéreo.
+    Retorna
+    ----------
+    Reproductor en pantalla de iPython con el audio estipulado
+
+    """
+
+    return ipd.Audio(file)
+
+```
+
+#### Demostración
 ```python
 playAudio("Happy.wav")
 ```
@@ -20,6 +44,8 @@ playAudio("Happy.wav")
 Para reproducir el audio a mayor velocidad basta con aumentar la tasa de muestras por segundo y para disminuirla basta con disminutir la tasa de muestras por segundo.
 
 Él módulo permite la reproducción de audio con la velocidad que estipule el usuario. Para hacelrlo basta llamar la función: **Speed_Rep(input_filename,speed,output_filename)**. Para la demostración se usó una parte de la canción Happy de Pharrel Williams en audio estéreo a una velocidad de 0.9 y 1.65.
+
+##### Código de la función:
 
 ```python
 Speed_Rep(input_filename,speed,output_filename):
