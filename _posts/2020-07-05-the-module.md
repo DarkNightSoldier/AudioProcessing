@@ -228,3 +228,54 @@ playAudio("limpieza.wav")
 {% include limpieza.html %}
 
 # [](#header-5) 5. Combinación de dos archivos de audio
+
+#### Funcionamiento:
+Para reproducir la combinación de dos audios basta con convertir las matrices de los audios a mono, promediar los valores de las matrices de entrada y el número de muestras por segundo.
+
+Él módulo permite la reproducción de un audio que combina los dos audios de entrada y guardar el archivo con el audio resultante. Para hacerlo basta llamar la función: **Inverse_Rep(input_filename,output_filename)**.
+
+##### Código de la función:
+```python
+def Combinar_Audios(audio1,audio2,output_filename):
+    """
+    Muestra en pantalla el reproductor de audio y guarda el audio que combina
+    los dos audios de entrada.
+
+    Parámetros
+    ----------
+    audio1: string
+         Nombre o localización/path del archivo .wav de entrada.
+    audio2: string
+         Nombre o localización/path del archivo .wav de entrada.    
+    output_filename: string
+         Nombre o localización/path del archivo .wav de salida
+
+    Retorna
+    ----------
+    Reproductor en pantalla de iPython con el audio que comnbina los audios de
+    entrada.
+
+    """    
+    rate_1,data_1=ReadAudio(audio1)
+    rate_2,data_2=ReadAudio(audio2)
+
+    if len(data_1)>len(data_2):
+        base_data=data_1.copy()
+        insert_data=data_2.copy()
+    else:
+        base_data=data_2.copy()
+        insert_data=data_1.copy()
+
+    for i in range (0,int(len(insert_data))):
+        base_data[i]=base_data[i]/2+insert_data[i]/2
+
+    WriteAudio(output_filename,(rate_1+rate_2)//2,base_data)
+    print(f"El archivo se guardo con éxito como {output_filename}")
+    return playAudio(output_filename)
+```
+#### Demostración:
+Para la demostración se combinó una parte de la canción Happy de Pharrel Williams y de la canción Sweet Lies, en formato mono con una tasa de muestras por segundo de 44100.
+```python
+Combinar_Audios("Happy.wav","sweet.wav","Combined.wav")
+```
+{% include combined.html %}
