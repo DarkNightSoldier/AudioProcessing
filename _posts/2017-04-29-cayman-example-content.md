@@ -7,18 +7,43 @@ Para abrir el Notebook en **Google Colab**:
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
-# [](#header-1)Reproducción de audio a velocidad normal:
-Él módulo incluye un reproductor de IPython Display, que se puede llamar fácilmente con la función: *playAudio("file.wav")*. Para la demostración se usó una parte de la canción Happy de Pharrel Williams en audio estéreo.
+# [](#header-1) 1. Reproducción de audio a velocidad normal:
+Él módulo incluye un reproductor de IPython Display, que se puede llamar fácilmente con la función: **playAudio("file.wav")**. Para la demostración se usó una parte de la canción Happy de Pharrel Williams en audio estéreo.
 ```python
 playAudio("Happy.wav")
 ```
 {% include happy.html %}
 
-## [](#header-2)Header 2
+## [](#header-2) Reproducción de audio a velocidad rápida o lenta:
 
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
+#### Funcionamiento:
+Para reproducir el audio a mayor velocidad basta con aumentar la tasa de muestras por segundo y para disminuirla basta con disminutir la tasa de muestras por segundo.
+
+Él módulo permite la reproducción de audio con la velocidad que estipule el usuario. Para hacelrlo basta llamar la función: **Speed_Rep(input_filename,speed,output_filename)**. Para la demostración se usó una parte de la canción Happy de Pharrel Williams en audio estéreo a una velocidad de 0.9 y 1.65.
+
+```python
+Speed_Rep(input_filename,speed,output_filename):
+    """
+    Muestra en pantalla el reproductor de audio y guarda el audio con la
+    velocidad dada por el usuario para el archivo .wav estipulado.
+
+    Parámetros
+    ----------
+    input_filename: string
+         Nombre o localización/path del archivo .wav de entrada.
+    speed: float
+        Velocidad con la que se va a reproducir el audio de destino.
+    output_filename: string
+         Nombre o localización/path del archivo .wav de salida
+    
+    Retorna
+    ----------
+    Reproductor en pantalla de iPython con el audio con la velocidad deseada.
+
+    """
+    
+```
+{% include happy.html %}
 
 ### [](#header-3)Header 3
 
