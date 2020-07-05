@@ -149,5 +149,3 @@ Donde:
 - $\alpha$=Factor de filtrado (0-1).
 - x[i]=Valor muestreado de la señal.
 - y[i-1]=Valor filtrado anterior.
-
-### Small image
