@@ -128,7 +128,7 @@ Inverse_Rep("Happy.wav","inverse.wav")
 
 ![Filtros de paso bajo y alto](https://i.stack.imgur.com/UJOhE.gif)
 
-El filtro EMA suaviza la señal en base a los más recientes puntos de datos más recientes y realiza un promedio móvil ponderado
+El filtro EMA suaviza la señal en base a los más recientes puntos de datos más recientes y realiza un promedio móvil ponderado.
 
 Un filtro EMA o de media móvil exponencial es uno de los filtros digitales más fáciles de implementar, principalmente por:
 1. Su facilidad para implementar.
@@ -138,7 +138,7 @@ Un filtro EMA o de media móvil exponencial es uno de los filtros digitales más
 ## Funcionamiento del filtro de paso bajo
 ![Filtros de paso bajo](http://www.dsprelated.com/josimages_new/filters/img85.png)
 
-Este tipo de filtro se caracteriza por el paso de las frecuencias más bajas y la atenuación de las frecuencias más altas.
+Este tipo de filtro se caracteriza por el paso de las frecuencias más bajas y la atenuación de las frecuencias más altas, lo que lo posiciona como útil para la disminución del ruido de alta frecuencia.
 
 El filtro EMA de paso bajo consiste en obtener un valor filtrado a partir de la aplicación de la siguiente expresión con cada uno de los datos de la matriz del audio mono:
 
