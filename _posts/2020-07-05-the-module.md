@@ -168,7 +168,9 @@ FFT_Graphing(f"FFT Original vs High pass α={alpha}",data,rate,"Original",data_h
 AudioGraphing(f"Original vs High pass α={alpha}",data,rate,"Original",data_high,rate,"Highpass")
 ```
 ![FFT Original VS Low Pass α=0.2](https://alejandrohiguera.codes/AudioProcessing/files/graph1.png)
+![Original VS Low Pass α=0.2](https://alejandrohiguera.codes/AudioProcessing/files/graph3.png)
 ![FFT Original VS High Pass α=0.2](https://alejandrohiguera.codes/AudioProcessing/files/graph2.png)
+![Original VS High Pass α=0.2](https://alejandrohiguera.codes/AudioProcessing/files/graph4.png)
 
 ##### Ecualización de f.bajas:
 ```python
