@@ -172,7 +172,7 @@ AudioGraphing(f"Original vs High pass α={alpha}",data,rate,"Original",data_high
 ![FFT Original VS High Pass α=0.2](https://alejandrohiguera.codes/AudioProcessing/files/graph2.png)
 ![Original VS High Pass α=0.2](https://alejandrohiguera.codes/AudioProcessing/files/graph4.png)
 
-##### Ecualización de f.bajas:
+##### Ecualización de frecuencias bajas:
 ```python
 print(f"Lowpass α={alpha}")
 WriteAudio("lowpass.wav",rate,data_low)
@@ -181,7 +181,7 @@ playAudio("lowpass.wav")
 *Lowpass α=0.2*
 {% include lowpass.html %}
 
-##### Ecualización de f.altas:
+##### Ecualización de frecuencias altas:
 ```python
 print(f"Lowpass α={alpha}")
 WriteAudio("lowpass.wav",rate,data_low)
@@ -216,3 +216,15 @@ AudioGraphing("Con Ruido VS Lowpass fc",data_1,rate_1,"Audio sin filtrar",data_2
 ```
 ![FFT Ruido VS Low Pass 500 Hz](https://alejandrohiguera.codes/AudioProcessing/files/graph5.png)
 ![Ruido VS Low Pass 500 Hz](https://alejandrohiguera.codes/AudioProcessing/files/graph6.png)
+
+```python
+playAudio("hfnoise.wav")
+```
+{% include hfnoise.html %}
+
+```python
+playAudio("limpieza.wav")
+```
+{% include limpieza.html %}
+
+# [](#header-5) 5. Combinación de dos archivos de audio
