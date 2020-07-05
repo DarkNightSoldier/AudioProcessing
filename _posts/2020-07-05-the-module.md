@@ -3,7 +3,7 @@ layout: post
 title: "Acerca del módulo"
 ---
 
-Para abrir el Notebook en **Google Colab**:
+Para abrir el Notebook en **Google Colaboratory**:
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DarkNightSoldier/AudioProcessing/blob/master/Procesamiento_Audio.ipynb)
 
@@ -149,3 +149,37 @@ Donde:
 - alpha=Factor de filtrado (0-1).
 - x[i]=Valor muestreado de la señal.
 - y[i-1]=Valor filtrado anterior.
+
+# [](#header-4a) 4.a) Ecualización de frecuencias bajas y altas.
+Para ello se selecciona un factor de filtro alpha y se aplica un filtro EMA LowPass/HighPass.
+
+##### Demostración:
+```python
+alpha = 0.2 #@param {type:"slider", min:0, max:1, step:0.01}
+rate,data=ReadAudio("Happy.wav")
+data=ConvertToMono(data)
+
+data_low=Lowpass(data,alpha)
+data_high=Highpass(data,alpha)
+
+FFT_Graphing(f"FFT Original vs Low pass α={alpha}",data,rate,"Original",data_low,rate,"Lowpass")
+FFT_Graphing(f"FFT Original vs High pass α={alpha}",data,rate,"Original",data_high,rate,"Highpass")
+```
+![FFT Original VS Low Pass α=0.2](https://alejandrohiguera.codes/AudioProcessing/files/graph1.png)
+![FFT Original VS High Pass α=0.2](https://alejandrohiguera.codes/AudioProcessing/files/graph1.png)
+
+```python
+print(f"Lowpass α={alpha}")
+WriteAudio("lowpass.wav",rate,data_low)
+playAudio("lowpass.wav")
+```
+*Lowpass α=0.2*
+{% include lowpass.html %}
+
+```python
+print(f"Lowpass α={alpha}")
+WriteAudio("lowpass.wav",rate,data_low)
+playAudio("lowpass.wav")
+```
+*Highpass α=0.2*
+{% include Highpass.html %}
