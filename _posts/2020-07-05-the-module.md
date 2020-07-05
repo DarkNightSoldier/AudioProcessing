@@ -198,9 +198,9 @@ Para ello se establece una frecuencia (Hz) de corte y se procede a aplicar un fi
 fr=int(input("Especifique la frecuencia de corte en Hz  "))
 Frequency_Cutoff("low",fr,"hfnoise.wav","limpieza.wav")
 ```
-**Especifique la frecuencia de corte en Hz  500**
-**α=0.2819698001234662**
-**El archivo se guardo con éxito como limpieza.wav**
+*Especifique la frecuencia de corte en Hz  500*
+*α=0.2819698001234662*
+*El archivo se guardo con éxito como limpieza.wav*
 
 ```python
 rate_1,data_1=ReadAudio("hfnoise.wav")
