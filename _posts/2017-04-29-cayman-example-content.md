@@ -7,7 +7,7 @@ Para abrir el Notebook en **Google Colab**:
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
-# [](#header-1) 1. Reproducción de audio a velocidad normal:
+# [](#header-1) 1. Algunas funciones del módulo
 Él módulo incluye un reproductor de IPython Display, que se puede llamar fácilmente con la función: **playAudio("file.wav")**. Para la demostración se usó una parte de la canción Happy de Pharrel Williams en audio estéreo.
 
 ##### Código de la función:
@@ -38,7 +38,7 @@ playAudio("Happy.wav")
 ```
 {% include happy.html %}
 
-## [](#header-2) Reproducción de audio a velocidad rápida o lenta:
+# [](#header-2) Reproducción de audio a velocidad rápida o lenta:
 
 #### Funcionamiento:
 Para reproducir el audio a mayor velocidad basta con aumentar la tasa de muestras por segundo y para disminuirla basta con disminuir la tasa de muestras por segundo.
@@ -74,6 +74,11 @@ def Speed_Rep(input_filename,speed,output_filename):
 
     """
 ```
+#### Demostración reproducción audio a velocidad lenta
+```python
+Speed_Rep("Happy.wav",Velocidad=0.9,"slow.wav")
+```
+*Se guardó con éxito el archivo como slow.wav*
 {% include slow.html %}
 
 ### [](#header-3)Header 3
