@@ -3,13 +3,14 @@ layout: post
 title: "Acerca del módulo"
 ---
 
-# [](#header-1)Vista previa del Notebook:
-
 Para abrir el Notebook en **Google Colab**: 
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
-{% include notebook.html %}
+# [](#header-1)Reproducción de audio a velocidad normal:
+```python
+playAudio("Happy.wav")
+```
 
 ## [](#header-2)Header 2
 
