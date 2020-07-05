@@ -39,7 +39,7 @@ playAudio("Happy.wav")
 {% include happy.html %}
 
 
-# [](#header-2) Reproducción de audio a velocidad rápida o lenta:
+# [](#header-2) 2. Reproducción de audio a velocidad rápida o lenta:
 
 #### Funcionamiento:
 Para reproducir el audio a mayor velocidad basta con aumentar la tasa de muestras por segundo y para disminuirla basta con disminuir la tasa de muestras por segundo.
@@ -89,7 +89,7 @@ Speed_Rep("Happy.wav",Velocidad=1.65,"fast.wav")
 {% include fast.html %}
 
 
-# [](#header-3) Reproducción de audio desde atrás:
+# [](#header-3) 3. Reproducción de audio desde atrás:
 #### Funcionamiento:
 Para reproducir el audio hacia atrás basta con leer la matriz desde atrás hacia adelante, conservando la misma tasa de muestras por segundo.
 
@@ -124,7 +124,7 @@ Inverse_Rep("Happy.wav","inverse.wav")
 *Se guardó con éxito el archivo como inverse.wav*
 {% include inverse.html %}
 
-# [](#header-4) Filtros EMA de paso bajo y paso alto
+# [](#header-4) 4. Filtros EMA de paso bajo y paso alto
 
 ![Filtros de paso bajo y alto](https://i.stack.imgur.com/UJOhE.gif)
 
