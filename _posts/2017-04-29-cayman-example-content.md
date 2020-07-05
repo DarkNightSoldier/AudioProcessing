@@ -48,7 +48,7 @@ Para reproducir el audio a mayor velocidad basta con aumentar la tasa de muestra
 ##### Código de la función:
 
 ```python
-Speed_Rep(input_filename,speed,output_filename):
+def Speed_Rep(input_filename,speed,output_filename):
     """
     Muestra en pantalla el reproductor de audio y guarda el audio con la
     velocidad dada por el usuario para el archivo .wav estipulado.
@@ -67,9 +67,14 @@ Speed_Rep(input_filename,speed,output_filename):
     Reproductor en pantalla de iPython con el audio con la velocidad deseada.
 
     """
-    
+    rate,data=ReadAudio(input_filename)
+    WriteAudio(output_filename,int(rate*speed),data)
+    print(f"El archivo se guardo con éxito como {output_filename}")
+    return playAudio(output_filename)
+
+    """
 ```
-{% include happy.html %}
+{% include slow.html %}
 
 ### [](#header-3)Header 3
 
