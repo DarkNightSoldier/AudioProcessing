@@ -3,7 +3,7 @@ description: Un proyecto de Alejandro Higuera C para INTRO CS UN-2026573 2020-1S
 show_downloads: false
 
 baseurl: "/cayman-blog" # change this to the subpath of your site, e.g. /blog. Leave it empty if you don't need it.
-url: "https://alejandrohiguera.codes/AudioProcessing" # change this to the base hostname & protocol for your site
+url: "https://alejandrohiguera.codes" # change this to the base hostname & protocol for your site
 
 
 google_analytics:
