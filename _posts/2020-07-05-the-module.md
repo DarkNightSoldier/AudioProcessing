@@ -188,7 +188,7 @@ WriteAudio("lowpass.wav",rate,data_low)
 playAudio("lowpass.wav")
 ```
 *Highpass α=0.2*
-{% include Highpass.html %}
+{% include highpass.html %}
 
 # [](#header-4b) 4.b) Limpieza de ruido de alta frecuencia
 Para ello se establece una frecuencia (Hz) de corte y se procede a aplicar un filtro EMA de paso bajo.
