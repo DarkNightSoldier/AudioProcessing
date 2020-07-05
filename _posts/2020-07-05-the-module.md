@@ -168,6 +168,7 @@ FFT_Graphing(f"FFT Original vs High pass α={alpha}",data,rate,"Original",data_h
 ![FFT Original VS Low Pass α=0.2](https://alejandrohiguera.codes/AudioProcessing/files/graph1.png)
 ![FFT Original VS High Pass α=0.2](https://alejandrohiguera.codes/AudioProcessing/files/graph2.png)
 
+##### Ecualización de f.bajas:
 ```python
 print(f"Lowpass α={alpha}")
 WriteAudio("lowpass.wav",rate,data_low)
@@ -176,6 +177,7 @@ playAudio("lowpass.wav")
 *Lowpass α=0.2*
 {% include lowpass.html %}
 
+##### Ecualización de f.altas:
 ```python
 print(f"Lowpass α={alpha}")
 WriteAudio("lowpass.wav",rate,data_low)
