@@ -142,10 +142,10 @@ Este tipo de filtro se caracteriza por el paso de las frecuencias más bajas y l
 
 El filtro EMA de paso bajo consiste en obtener un valor filtrado a partir de la aplicación de la siguiente expresión con cada uno de los datos de la matriz del audio mono:
 
-$$y[i]=\alpha \cdot x[i] + (1-\alpha) \cdot y[i-1]$$
+y[i]= alpha*x[i] + (1-alpha) * y[i-1]
 
 Donde:
 - y[i]=Valor filtrado.
-- $\alpha$=Factor de filtrado (0-1).
+- alpha=Factor de filtrado (0-1).
 - x[i]=Valor muestreado de la señal.
 - y[i-1]=Valor filtrado anterior.
