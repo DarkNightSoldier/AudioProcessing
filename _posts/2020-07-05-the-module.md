@@ -88,6 +88,34 @@ Speed_Rep("Happy.wav",Velocidad=1.65,"fast.wav")
 *Se guardó con éxito el archivo como slow.wav*
 {% include fast.html %}
 
+# [](#header-3) Reproducción de audio desde atrás:
+#### Funcionamiento:
+Para reproducir el audio hacia atrás basta con leer la matriz desde atrás hacia adelante, conservando la misma tasa de muestras por segundo.
+
+Él módulo permite la reproducción de audio hacia atrás y guardar el archivo con el audio resultante. Para hacerlo basta llamar la función: **Inverse_Rep(input_filename,output_filename)**.
+##### Código de la función:
+```python
+def Inverse_Rep(input_filename,output_filename):
+    """
+    Muestra en pantalla el reproductor de audio y guarda el audio reproducido
+    desde atrás en el archivo .wav estipulado.
+
+    Parámetros
+    ----------
+    input_filename: string
+         Nombre o localización/path del archivo .wav de entrada.
+    output_filename: string
+         Nombre o localización/path del archivo .wav de salida
+    """
+    
+    rate,data=ReadAudio(input_filename)
+    #Convertimos a mono el audio original
+    data=ConvertToMono(data)
+    #Leemos la matriz desde atrás usando la notación de slicing de listas
+    WriteAudio(output_filename,rate,data[::-1])
+    print(f"El archivo se guardo con éxito como {output_filename}")
+    return playAudio(output_filename)
+```
 ### Small image
 
 ![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
