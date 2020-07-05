@@ -41,9 +41,9 @@ playAudio("Happy.wav")
 ## [](#header-2) Reproducción de audio a velocidad rápida o lenta:
 
 #### Funcionamiento:
-Para reproducir el audio a mayor velocidad basta con aumentar la tasa de muestras por segundo y para disminuirla basta con disminutir la tasa de muestras por segundo.
+Para reproducir el audio a mayor velocidad basta con aumentar la tasa de muestras por segundo y para disminuirla basta con disminuir la tasa de muestras por segundo.
 
-Él módulo permite la reproducción de audio con la velocidad que estipule el usuario. Para hacelrlo basta llamar la función: **Speed_Rep(input_filename,speed,output_filename)**. Para la demostración se usó una parte de la canción Happy de Pharrel Williams en audio estéreo a una velocidad de 0.9 y 1.65.
+Él módulo permite la reproducción de audio con la velocidad que estipule el usuario. Para hacerlo basta llamar la función: **Speed_Rep(input_filename,speed,output_filename)**. Para la demostración se usó una parte de la canción Happy de Pharrel Williams en audio estéreo a una velocidad de 0.9 y 1.65.
 
 ##### Código de la función:
 
