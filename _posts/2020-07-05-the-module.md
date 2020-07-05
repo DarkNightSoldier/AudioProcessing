@@ -38,6 +38,7 @@ playAudio("Happy.wav")
 ```
 {% include happy.html %}
 
+
 # [](#header-2) Reproducción de audio a velocidad rápida o lenta:
 
 #### Funcionamiento:
@@ -116,10 +117,37 @@ def Inverse_Rep(input_filename,output_filename):
     print(f"El archivo se guardo con éxito como {output_filename}")
     return playAudio(output_filename)
 ```
+##### Demostración:
+```python
+Inverse_Rep("Happy.wav","inverse.wav")
+```
+*Se guardó con éxito el archivo como inverse.wav*
+{% include inverse.html %}
+
+# [](#header-4) Filtros EMA de paso bajo y paso alto
+
+![Filtros de paso bajo y alto](https://i.stack.imgur.com/UJOhE.gif)
+
+El filtro EMA suaviza la señal en base a los más recientes puntos de datos más recientes y realiza un promedio móvil ponderado
+
+Un filtro EMA o de media móvil exponencial es uno de los filtros digitales más fáciles de implementar, principalmente por:
+1. Su facilidad para implementar.
+2. Poco uso de CPU.
+3. Se puede configurar fácilmente un filtrado de paso bajo o paso alto.
+
+## Funcionamiento del filtro de paso bajo
+![Filtros de paso bajo](http://www.dsprelated.com/josimages_new/filters/img85.png)
+
+Este tipo de filtro se caracteriza por el paso de las frecuencias más bajas y la atenuación de las frecuencias más altas.
+
+El filtro EMA de paso bajo consiste en obtener un valor filtrado a partir de la aplicación de la siguiente expresión con cada uno de los datos de la matriz del audio mono:
+
+$y[i]=\alpha \cdot x[i] + (1-\alpha) \cdot y[i-1]$
+
+Donde:
+- y[i]=Valor filtrado.
+- $\alpha$=Factor de filtrado (0-1).
+- x[i]=Valor muestreado de la señal.
+- y[i-1]=Valor filtrado anterior.
+
 ### Small image
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
