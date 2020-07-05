@@ -8,9 +8,11 @@ Para abrir el Notebook en **Google Colab**:
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # [](#header-1)Reproducción de audio a velocidad normal:
+Él módulo incluye un reproductor de IPython Display, que se puede llamar fácilmente con la función: *playAudio("file.wav")*. Para la demostración se usó una parte de la canción Happy de Pharrel Williams en audio estéreo.
 ```python
 playAudio("Happy.wav")
 ```
+{% include happy.html %}
 
 ## [](#header-2)Header 2
 
