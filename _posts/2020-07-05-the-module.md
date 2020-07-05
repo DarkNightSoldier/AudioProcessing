@@ -3,7 +3,7 @@ layout: post
 title: "Acerca del módulo"
 ---
 
-Para abrir el Notebook en **Google Colab**: 
+Para abrir el Notebook en **Google Colab**:
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
@@ -61,7 +61,7 @@ def Speed_Rep(input_filename,speed,output_filename):
         Velocidad con la que se va a reproducir el audio de destino.
     output_filename: string
          Nombre o localización/path del archivo .wav de salida
-    
+
     Retorna
     ----------
     Reproductor en pantalla de iPython con el audio con la velocidad deseada.
@@ -72,7 +72,6 @@ def Speed_Rep(input_filename,speed,output_filename):
     print(f"El archivo se guardo con éxito como {output_filename}")
     return playAudio(output_filename)
 
-    """
 ```
 #### Demostración reproducción audio a velocidad lenta
 ```python
@@ -87,6 +86,7 @@ Speed_Rep("Happy.wav",Velocidad=1.65,"fast.wav")
 ```
 *Se guardó con éxito el archivo como slow.wav*
 {% include fast.html %}
+
 
 # [](#header-3) Reproducción de audio desde atrás:
 #### Funcionamiento:
@@ -107,7 +107,7 @@ def Inverse_Rep(input_filename,output_filename):
     output_filename: string
          Nombre o localización/path del archivo .wav de salida
     """
-    
+
     rate,data=ReadAudio(input_filename)
     #Convertimos a mono el audio original
     data=ConvertToMono(data)
