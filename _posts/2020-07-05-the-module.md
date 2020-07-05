@@ -85,7 +85,7 @@ Speed_Rep("Happy.wav",Velocidad=0.9,"slow.wav")
 ```python
 Speed_Rep("Happy.wav",Velocidad=1.65,"fast.wav")
 ```
-*Se guardó con éxito el archivo como slow.wav*
+*Se guardó con éxito el archivo como fast.wav*
 {% include fast.html %}
 
 
