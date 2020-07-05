@@ -1,19 +1,13 @@
 ---
 layout: post
-title: "Example content"
+title: "Acerca del módulo de Procesamiento de Audio"
 ---
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+# [](#header-1)Vista previa del Notebook:
 
-[Link to another page: About]({{ '/about.html' | absolute_url }}).
+Para abrir el Notebook en *Google Colab*: 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
-There should be whitespace between paragraphs.
-
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
-
-# [](#header-1)Header 1
-
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
 
 ## [](#header-2)Header 2
 
