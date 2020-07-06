@@ -33,9 +33,7 @@
 
 Como proyecto para el curso de Introducción a las Ciencias de la Computación en el semestre 2020-1S desarrollé un notebok en Google Colaboratory para el análisis y modificación de audio en un formato wav, que viene acompañado del módulo **colabaudiopr-es** para proveer un diseño modular al Notebook, el cuál está disponible para su instalación desde pip.
 
-El módulo **colabaudiopr-es** provee herramientas básicas y facilidades para la edición y análisis de audio en formato .wav. Puede se instalado con pip install, dado que se encuentra publicado en pipy.org. Para saber más de su instalación vaya a la pestaña de **Instalación**.
-
-El módulo integra las librerias Numpy, Scipy y Matplotlib para desplegar más de 10 funciones integradas, para saber más de sus funciones vaya a la pestaña de **Información**, donde encontrará algunas de las demostraciones de las funciones de la libreria.
+El módulo **colabaudiopr-es** provee herramientas básicas y facilidades para la edición y análisis de audio en formato .wav. Puede se instalado con pip install, dado que se encuentra publicado en pipy.org. Este ntegra las librerias Numpy, Scipy y Matplotlib para desplegar más de 10 funciones integradas.
 
 ## 2. Instalación del módulo
 ```python
