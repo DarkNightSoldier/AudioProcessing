@@ -244,6 +244,8 @@ A continuación se muestra algunas variaciones del filtrado al cambiar el factor
 
 ![FFT Lowpass alpha=0](https://alejandrohiguera.codes/AudioProcessing/files/fft_low_0.png)
 ![Lowpass alpha=0](https://alejandrohiguera.codes/AudioProcessing/files/low_0.png)
+![FFT Lowpass alpha=0.2](https://alejandrohiguera.codes/AudioProcessing/files/fft_low_01.png)
+![Lowpass alpha=0.2](https://alejandrohiguera.codes/AudioProcessing/files/low_01.png)
 ![FFT Lowpass alpha=0.2](https://alejandrohiguera.codes/AudioProcessing/files/fft_low_02.png)
 ![Lowpass alpha=0.2](https://alejandrohiguera.codes/AudioProcessing/files/low_02.png)
 ![FFT Lowpass alpha=0.4](https://alejandrohiguera.codes/AudioProcessing/files/fft_low_04.png)
@@ -257,6 +259,23 @@ A continuación se muestra algunas variaciones del filtrado al cambiar el factor
 ![FFT Lowpass alpha=1](https://alejandrohiguera.codes/AudioProcessing/files/fft_low_1.png)
 ![Lowpass alpha=1](https://alejandrohiguera.codes/AudioProcessing/files/low_1.png)
 
+## Factor alpha y variación del filtrado de paso alto:
+A continuación se muestra algunas variaciones del filtrado al cambiar el factor alpha para el filtro EMA de paso bajo:
+
+![FFT Highpass alpha=0](https://alejandrohiguera.codes/AudioProcessing/files/fft_hp_0.png)
+![Highpass alpha=0](https://alejandrohiguera.codes/AudioProcessing/files/hp_0.png)
+![FFT Highpass alpha=0.1](https://alejandrohiguera.codes/AudioProcessing/files/fft_hp_01.png)
+![Highpass alpha=0.1](https://alejandrohiguera.codes/AudioProcessing/files/hp_01.png)
+![FFT Highpass alpha=0.3](https://alejandrohiguera.codes/AudioProcessing/files/fft_hp_03.png)
+![Highpass alpha=0.3](https://alejandrohiguera.codes/AudioProcessing/files/hp_03.png)
+![FFT Highpass alpha=0.5](https://alejandrohiguera.codes/AudioProcessing/files/fft_hp_05.png)
+![Highpass alpha=0.5](https://alejandrohiguera.codes/AudioProcessing/files/hp_05.png)
+![FFT Highpass alpha=0.7](https://alejandrohiguera.codes/AudioProcessing/files/fft_hp_07.png)
+![Highpass alpha=0.7](https://alejandrohiguera.codes/AudioProcessing/files/hp_07.png)
+![FFT Highpass alpha=0.9](https://alejandrohiguera.codes/AudioProcessing/files/fft_hp_09.png)
+![Highpass alpha=0.9](https://alejandrohiguera.codes/AudioProcessing/files/hp_09.png)
+![FFT Highpass alpha=1](https://alejandrohiguera.codes/AudioProcessing/files/fft_hp_1.png)
+![Highpass alpha=1](https://alejandrohiguera.codes/AudioProcessing/files/hp_1.png)
 
 # [](#header-4b) 4.b) Ecualización de frecuencias bajas y altas.
 Para ello se selecciona un factor de filtro alpha y se aplica un filtro EMA LowPass/HighPass.
