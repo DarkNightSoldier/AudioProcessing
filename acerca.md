@@ -231,7 +231,7 @@ def AudioGraphing(Graph_Title,data_1,rate_1,audio1_title,data_2,rate_2,audio2_ti
 ```python
 AudioGraphing("Señal filtrada VS sin filtrar",data,rate,"Señal sin filtrar",data_2,rate_2,f"Señal filtrada")
 ```
-![Comparative graphing example](https://alejandrohiguera.codes/files/graph7.png)
+![Comparative graphing example](https://alejandrohiguera.codes/AudioProcessing/files/graph7.png)
 
 ## Código de la función de graficación comparativa FFT
 ```python
@@ -289,7 +289,7 @@ Poder graficar las frecuencias de dos audios mediante la transformada rápida de
 ```python
 AudioGraphing("Señal filtrada VS sin filtrar",data,rate,"Señal sin filtrar",data_2,rate_2,f"Señal filtrada")
 ```
-![Comparative fft graphing example](https://alejandrohiguera.codes/files/graph8.png)
+![Comparative fft graphing example](https://alejandrohiguera.codes/AudioProcessing/files/graph8.png)
 
 # 6. Filtros EMA de paso bajo y paso alto
 
