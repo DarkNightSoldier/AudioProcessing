@@ -40,7 +40,7 @@ Para abrir el Notebook en **Google Colaboratory**:
     * [Código de la función](#código-de-la-funcion-5)
   * [Factor alpha y la frecuencia de corte en el filtrado](#factor-alpha-y-la-frecuencia-de-corte-en-el-filtrado)
     * [Factor alpha y variación del filtrado de paso bajo](#factor-alpha-y-variación-del-filtrado-de-paso-bajo)
-    * [Factor alpha y variación del filtrado de paso bajo](#factor-alpha-y-variación-del-filtrado-de-paso-bajo)
+    * [Factor alpha y variación del filtrado de paso alto](#factor-alpha-y-variación-del-filtrado-de-paso-alto)
     * [Relación del factor alpha y la frecuencia de corte](#relación-del-factor-alpha-y-la-frecuencia-de-corte)
   * [6.1. Ecualización de frecuencias bajas y altas]()
     * [Demostración](#demostración-2)
@@ -52,7 +52,7 @@ Para abrir el Notebook en **Google Colaboratory**:
   * [Demostración](demostración-4)
 
 
-# [](#header-1) 1. Reproducción de audio
+# 1. Reproducción de audio
 Él módulo incluye un reproductor de IPython Display, que se puede llamar fácilmente con la función: **playAudio("file.wav")**. Para la demostración se usó una parte de la canción Happy de Pharrel Williams en audio estéreo.
 
 ##### Código de la función:
@@ -85,9 +85,96 @@ playAudio("Happy.wav")
 
 # 2. Funciones de lectura y escritura de audio
 
-#### Código de la función:
+#### Función de lectura de audio:
+```python
+def ReadAudio(file):
+    """
+    Retorna la tasa de muestras por minuto y la matriz con los datos del audio}
+    en formato mono o estéreo.
 
-#### Demostración:
+    Parámetros
+    ----------
+    file: string
+        Nombre del archivo en formato .wav que contiene audio en formato
+        mono o estéreo.
+
+    Retorna
+    --------
+    List:
+        [rate,data]
+    rate: int
+        Muestras por segundo
+    data: numpy ndarray
+        Matriz con audio en mono o estéreo
+    """
+    rate,data=wavfile.read(file)
+    return [rate,data]
+```
+
+#### Función de escritura de audio:
+```python
+def WriteAudio(filename,rate,matrix):
+    """
+    Escribe un archivo de audio .wav a partir de una matriz numpy con los datos
+    del audio en mono o estéreo y la tasa de muestras por segundo.
+
+    Parámetros
+    ----------
+    filename: string
+        Nombre del archivo de salida .wav.
+    matrix: numpy ndarray
+        Matriz con audio en mono o estéreo.
+    rate: int
+        Tasa de muestras por minuto del audio.
+
+    Retorna
+    --------
+    Archivo de formato wav con nombre establecido por el usuario <filename>.
+    """
+    wavfile.write(filename,rate,matrix)
+```
+
+### Función de conversión de estéreo a mono:
+Separa vectorialmente la matriz de entrada en dos canales, izquierda y derecha. Poteriormente suma y promedia el valor de los dos canales en uno solo y retorna una matriz de un canal con el mismo de numpy dtype.
+
+```python
+def ConvertToMono(data):
+    """
+    Retorna un array de Numpy con la matriz de audio convertida a mono con el
+    mismo dtype de Numpy que el original.
+
+    Parámetros
+    ----------
+    data: numpy ndarray
+        Matriz de Numpy que contiene audio en formato mono o estéreo.
+
+    Retorna
+    ----------
+    mono: numpy ndarray
+        Matriz de Numpy que contiene audio en mono.
+    """
+    #Se procede a leer el audio
+    if len(data.shape)==1:
+        canales=1
+    else:  
+        canales=data.shape[1]
+
+    if canales==1:
+        mono=data
+    #En caso de que el audio sea de formato estéreo procede a su conversión
+    elif canales==2:
+        mono=[]
+        stereo_dtype=data.dtype
+        #Se obtienen los vectores correspondientes a cada canal de audio
+        l=data[:,0]
+        r=data[:,1]
+        #Se suma cada canal de audio para obtener uno solo
+        for i in range(len(data)):
+            d=(l[i]/2)+(r[i]/2)
+            mono.append(d)
+        mono=np.array(mono,dtype=stereo_dtype)
+    return mono
+```
 
 # 3. Reproducción de audio a velocidad rápida o lenta
 
@@ -287,7 +374,7 @@ def FFT_Graphing(Graph_Title,data_1,rate_1,audio1_title,data_2,rate_2,audio2_tit
 Poder graficar las frecuencias de dos audios mediante la transformada rápida defourier brinda información valiosa acerca del contenido de los dos audios a comparar.
 
 ```python
-AudioGraphing("Señal filtrada VS sin filtrar",data,rate,"Señal sin filtrar",data_2,rate_2,f"Señal filtrada")
+FFT_Graphing("Señal filtrada VS sin filtrar",data,rate,"Señal sin filtrar",data_2,rate_2,f"Señal filtrada")
 ```
 ![Comparative fft graphing example](https://alejandrohiguera.codes/AudioProcessing/files/graph8.png)
 
@@ -398,7 +485,7 @@ def Highpass(data,alpha):
     filtered=np.array(filtered,dtype=data.dtype)
     return filtered
 ```
-## 4.a) Acerca del factor alpha en el filtrado y la frecuencia de corte:
+## Factor alpha y la frecuencia de corte en el filtrado
 
 ## Factor alpha y variación del filtrado de paso bajo:
 A continuación se muestra algunas variaciones del filtrado al cambiar el factor alpha para el filtro EMA de paso bajo:
@@ -438,7 +525,7 @@ A continuación se muestra algunas variaciones del filtrado al cambiar el factor
 ![FFT Highpass alpha=1](https://alejandrohiguera.codes/AudioProcessing/files/fft_hp_1.png)
 ![Highpass alpha=1](https://alejandrohiguera.codes/AudioProcessing/files/hp_1.png)
 
-# [](#header-4b) 4.b) Ecualización de frecuencias bajas y altas.
+# 6.1. Ecualización de frecuencias bajas y altas.
 Para ello se selecciona un factor de filtro alpha y se aplica un filtro EMA LowPass/HighPass.
 
 #### Demostración:
@@ -478,7 +565,7 @@ playAudio("lowpass.wav")
 *Highpass α=0.2*
 {% include highpass.html %}
 
-# [](#header-4c) 4.c) Limpieza de ruido de alta frecuencia
+# 6.2 Limpieza de ruido de alta frecuencia
 Para ello se establece una frecuencia (Hz) de corte y se procede a aplicar un filtro EMA de paso bajo.
 
 #### Demostración:
