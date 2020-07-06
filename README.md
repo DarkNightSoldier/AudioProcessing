@@ -19,6 +19,7 @@
 ### *Github Page del proyecto:* [alejandrohiguera.codes/AudioProcessing](https://alejandrohiguera.codes/AudioProcessing/)
 ### *Repositorio del módulo* [https://github.com/DarkNightSoldier/colabaudiopr_es](https://github.com/DarkNightSoldier/colabaudiopr_es)
 ### *Repositorio del Notebook de Colab* (https://github.com/DarkNightSoldier/AudioProcessing)(https://github.com/DarkNightSoldier/AudioProcessing)
+### *Link al repositorio de Python Packages PyPi: (https://pypi.org/project/colabaudiopr_es)[https://pypi.org/project/colabaudiopr_es]
 
 ## Contenido
 
