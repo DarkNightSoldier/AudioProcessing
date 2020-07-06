@@ -51,7 +51,7 @@ from colabaudiopr_es import *
 Se puede leer en detalle acerca de las funcionalidades del proyecto en [alejandrohiguera.codes/AudioProcessing/acerca.html](https://alejandrohiguera.codes/AudioProcessing/acerca.html).
 
 1. [Reproducción de audio](https://alejandrohiguera.codes/AudioProcessing/acerca.html#1-reproducción-de-audio)
-    1. [Código de la función](https://alejandrohiguera.codes/AudioProcessing/acerca.html#11-código-de-la-funciónn)
+    1. [Código de la función](https://alejandrohiguera.codes/AudioProcessing/acerca.html#11-código-de-la-función)
     2. [Demostración](https://alejandrohiguera.codes/AudioProcessing/acerca.html#12-demostración)
 2. [Funciones de lectura y escritura de audio](https://alejandrohiguera.codes/AudioProcessing/acerca.html#2-funciones-de-lectura-y-escritura-de-audio)
     1. [Función de lectura de audio](https://alejandrohiguera.codes/AudioProcessing/acerca.html#21-lectura-de-audio)
