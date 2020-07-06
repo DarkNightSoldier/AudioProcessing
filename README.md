@@ -6,14 +6,14 @@
 
 <p align="center"><img src="https://alejandrohiguera.codes/AudioProcessing/files/banner-cs.svg" width="100%"></p>
 
+# Programa de manipulación de audio WAV en Google Colaboratory
+
 ## Contenido
 
 1. [Introducción](#1-introducción)
-2. [Instalación del módulo](#2-instalación-del-modulo)
+2. [Instalación del módulo](#2-instalación-del-módulo)
 
-# Programa de manipulación de audio WAV en Google Colaboratory
-
-1. Introducción
+## 1. Introducción
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla purus lectus, suscipit sit amet sagittis at, aliquet vestibulum mauris. Etiam scelerisque sed dui a finibus. Suspendisse dapibus, orci vitae finibus viverra, purus turpis molestie nisl, ut posuere purus nulla eget nulla. Proin vel enim ut neque ultrices scelerisque in at quam. Donec accumsan metus quis odio luctus lobortis. Nam libero eros, sodales nec rhoncus nec, tincidunt ac mi. Praesent non laoreet arcu. Sed lobortis massa leo, eleifend tincidunt diam malesuada nec. Sed blandit orci at nibh varius, id congue leo hendrerit. Donec posuere posuere nunc, vitae rutrum turpis pretium sit amet. Integer id consequat velit. Nulla sed porta nunc.
 
@@ -25,7 +25,7 @@ Cras at suscipit massa. Nulla ut velit quis velit volutpat condimentum vel ut to
 
 Nunc ultricies metus arcu, a efficitur justo semper at. Pellentesque mattis sed dolor ut lobortis. Donec malesuada ex eu ante rhoncus sodales ac ac velit. In varius viverra ipsum, accumsan euismod purus cursus suscipit. Suspendisse venenatis ex rutrum urna sagittis, nec volutpat odio faucibus. Curabitur vehicula eu ipsum id sodales. Proin ac tortor massa. In nibh enim, laoreet eu turpis condimentum, elementum euismod enim. Morbi lacinia, lacus ac vehicula rhoncus, lectus sapien eleifend lorem, sit amet dictum quam orci tempus lorem. In congue, ligula sed tincidunt elementum, risus enim scelerisque purus, sed ullamcorper magna mauris eu tortor. Nulla varius risus sed viverra ornare. Integer in ullamcorper sem, mollis laoreet quam. Duis rhoncus sem non justo pharetra tristique. Praesent et dignissim nunc. Suspendisse id aliquet turpis. Ut eleifend pulvinar eros quis faucibus.
 
-2. Instalación del módulo
+## 2. Instalación del módulo
 ```python
 pip install colabaudiopr_es
 ```
