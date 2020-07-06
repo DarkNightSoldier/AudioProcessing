@@ -15,7 +15,7 @@ Para abrir el Notebook en **Google Colaboratory**:
 1. [Reproducción de audio](#1-reproducción-de-audio)
 2. [Funciones de lectura y escritura de audio](#2-funciones-de-lectura-y-escritura-de-audio)
 3. [Reproducción de audio a velocidad rápida o lenta](#3-reproducción-de-audio-a-velocidad-rápida-o-lenta)
-4. [Reproucción de audio hacia atras](#4-reproducción-de-audio-hacia-atras)
+4. [Reproucción de audio hacia atras](#4-reproducción-de-audio-hacia-atrás)
 5. [Filtros EMA de paso bajo y paso alto](#5-filtros-EMA-de-paso-bajo-y-paso-alto)
 6. [Combinación de dos archivos de audio](#6-combinación-de-dos-archivos-de-audio)
 
