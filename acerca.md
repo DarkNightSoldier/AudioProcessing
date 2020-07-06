@@ -446,15 +446,9 @@ El filtro EMA de paso alto consiste en obtener un valor filtrado a partir de la 
 
 ![y[i]=x[i]-lowpass[i]](http://latex2png.com/pngs/13ae5022aa95018a04e5936d53c6573d.png)
 
-Es decir:
-
-![y[i]=x[i]-(alpha*x[i] + (1-alpha) * y[i-1])](http://latex2png.com/pngs/a564033f3d700be67d17a70051f84c54.png)
-
 Donde:
 - y[i]=Valor filtrado.
-- α=Factor de filtrado (0-1).
-- x[i]=Valor muestreado de la señal.
-- y[i-1]=Valor filtrado anterior.
+- lowpass[i]=Valor del filtro de paso bajo.
 
 ### 6.2.1. Código de la función:
 ```python
