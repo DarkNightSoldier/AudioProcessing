@@ -178,6 +178,10 @@ Inverse_Rep("Happy.wav","inverse.wav")
 
 ## Funcionamiento
 
+Ajusta el eje x al dominio y escala correcta (Frecuencia (Hz) y Tiempo (s). Posteriormente grafica los datos del audio/señal de un único canal (mono) con ayuda de la libreria Matplotlib, siendo de fácil configuración pues ya vien con los argumentos necesarios para la comparación de dos archivos de audio.
+
+Para graficar comparativamente dos audios basta con llamar llamar la función **AudioGraphing(Graph_Title,data_1,rate_1,audio1_title,data_2,rate_2,audio2_title)** o si desea comparar su transformada rápida de fourier **FFT_Graphing(Graph_Title,data_1,rate_1,audio1_title,data_2,rate_2,audio2_title)**.
+
 ## Código de la función de graficación comparativa
 ```python
 def AudioGraphing(Graph_Title,data_1,rate_1,audio1_title,data_2,rate_2,audio2_title):
@@ -280,6 +284,8 @@ def FFT_Graphing(Graph_Title,data_1,rate_1,audio1_title,data_2,rate_2,audio2_tit
 ```
 
 ## Demostración graficación comparativa FFT
+Poder graficar las frecuencias de dos audios mediante la transformada rápida defourier brinda información valiosa acerca del contenido de los dos audios a comparar.
+
 ```python
 AudioGraphing("Señal filtrada VS sin filtrar",data,rate,"Señal sin filtrar",data_2,rate_2,f"Señal filtrada")
 ```
