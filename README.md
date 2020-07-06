@@ -8,8 +8,8 @@
 
 ## Contenido
 
-1. [Introducción] (#1-estructura-del-curso)
-2. [Instalación del módulo]
+1. [Introducción](#1-introduccion)
+2. [Instalación del módulo](#2-instlacion-del-modulo)
 
 # Programa de manipulación de audio WAV en Google Colaboratory
 
