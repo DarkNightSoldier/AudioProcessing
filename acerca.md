@@ -522,6 +522,10 @@ A continuación se muestra algunas variaciones del filtrado al cambiar el factor
 
 ### 6.3.3. Relación del factor alpha y la frecuencia de corte:
 
+La relación entre la frecuencia de corte y el factor alpha está dada por la fórmula:
+
+![alpha=(2*math.pi*dt*frequency)/((2*math.pi*dt*frequency)+1)](http://latex2png.com/pngs/f437e1b9b3917ce909e3cc04847d676c.png)
+
 # 6.4. Ecualización de frecuencias bajas y altas.
 Para ello se selecciona un factor de filtro alpha y se aplica un filtro EMA LowPass/HighPass.
 
