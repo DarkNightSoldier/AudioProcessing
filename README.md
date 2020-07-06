@@ -26,6 +26,8 @@
 
 1. [Introducción](#1-introducción)
 2. [Instalación del módulo](#2-instalación-del-módulo)
+3. [Algunas funcionalidades](#3-algunas-funcionalidades)
+4. [Conclusión del proyecto](#4-conclusión del proyecto)
 
 ## 1. Introducción
 
@@ -39,3 +41,5 @@ El módulo integra las librerias Numpy, Scipy y Matplotlib para desplegar más d
 ```python
 pip install colabaudiopr_es
 ```
+## 3. Algunas funcionalidades
+## 4. Conclusión del proyecto
