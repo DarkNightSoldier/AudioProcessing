@@ -18,7 +18,7 @@ Para abrir el Notebook en **Google Colaboratory**:
 2. [Funciones de lectura y escritura de audio](#2-funciones-de-lectura-y-escritura-de-audio)
     1. [Función de lectura de audio]()
     2. [Función de escritura de audio]()
-    3. [Función de conversión de estéreo a mono]() 
+    3. [Función de conversión de estéreo a mono]()
 3. [Reproducción de audio a velocidad rápida o lenta](#3-reproducción-de-audio-a-velocidad-rápida-o-lenta)
     1. [Funcionamiento](#funcionamiento-1)
     2. [Código de la función](#código-de-la-función-2)
@@ -56,7 +56,7 @@ Para abrir el Notebook en **Google Colaboratory**:
 # 1. Reproducción de audio
 Él módulo incluye un reproductor de IPython Display, que se puede llamar fácilmente con la función: **playAudio("file.wav")**. Para la demostración se usó una parte de la canción Happy de Pharrel Williams en audio estéreo.
 
-##### Código de la función:
+#### 1.1. Código de la función:
 ```python
 def playAudio(file):
     """
@@ -78,7 +78,7 @@ def playAudio(file):
 
 ```
 
-#### Demostración
+#### 1.2 Demostración
 ```python
 playAudio("Happy.wav")
 ```
@@ -86,7 +86,7 @@ playAudio("Happy.wav")
 
 # 2. Funciones de lectura y escritura de audio
 
-#### Función de lectura de audio:
+#### 2.1. Lectura de audio:
 ```python
 def ReadAudio(file):
     """
@@ -112,7 +112,7 @@ def ReadAudio(file):
     return [rate,data]
 ```
 
-#### Función de escritura de audio:
+#### 2.2. Escritura de audio:
 ```python
 def WriteAudio(filename,rate,matrix):
     """
@@ -135,7 +135,7 @@ def WriteAudio(filename,rate,matrix):
     wavfile.write(filename,rate,matrix)
 ```
 
-### Función de conversión de estéreo a mono:
+### 2.3. Conversión de estéreo a mono:
 Separa vectorialmente la matriz de entrada en dos canales, izquierda y derecha. Poteriormente suma y promedia el valor de los dos canales en uno solo y retorna una matriz de un canal con el mismo de numpy dtype.
 
 ```python
@@ -179,12 +179,12 @@ def ConvertToMono(data):
 
 # 3. Reproducción de audio a velocidad rápida o lenta
 
-#### Funcionamiento:
+#### 3.1. Funcionamiento:
 Para reproducir el audio a mayor velocidad basta con aumentar la tasa de muestras por segundo y para disminuirla basta con disminuir la tasa de muestras por segundo.
 
 Él módulo permite la reproducción de audio con la velocidad que estipule el usuario. Para hacerlo basta llamar la función: **Speed_Rep(input_filename,speed,output_filename)**. Para la demostración se usó una parte de la canción Happy de Pharrel Williams en audio estéreo a una velocidad de 0.9 y 1.65.
 
-##### Código de la función:
+#### 3.2. Código de la función:
 
 ```python
 def Speed_Rep(input_filename,speed,output_filename):
@@ -212,14 +212,14 @@ def Speed_Rep(input_filename,speed,output_filename):
     return playAudio(output_filename)
 
 ```
-#### Demostración reproducción audio a velocidad lenta
+#### 3.3. Demostración reproducción audio a velocidad lenta
 ```python
 Speed_Rep("Happy.wav",Velocidad=0.9,"slow.wav")
 ```
 *Se guardó con éxito el archivo como slow.wav*
 {% include slow.html %}
 
-#### Demostración reproducción audio a velocidad rápida
+#### 3.4. Demostración reproducción audio a velocidad rápida
 ```python
 Speed_Rep("Happy.wav",Velocidad=1.65,"fast.wav")
 ```
@@ -228,7 +228,7 @@ Speed_Rep("Happy.wav",Velocidad=1.65,"fast.wav")
 
 
 # 4. Reproducción de audio hacia atrás
-#### Funcionamiento:
+#### 4.1. Funcionamiento:
 Para reproducir el audio hacia atrás basta con leer la matriz desde atrás hacia adelante, conservando la misma tasa de muestras por segundo.
 
 Él módulo permite la reproducción de audio hacia atrás y guardar el archivo con el audio resultante. Para hacerlo basta llamar la función: **Inverse_Rep(input_filename,output_filename)**.
@@ -255,7 +255,7 @@ def Inverse_Rep(input_filename,output_filename):
     print(f"El archivo se guardo con éxito como {output_filename}")
     return playAudio(output_filename)
 ```
-#### Demostración:
+#### 4.2. Demostración:
 ```python
 Inverse_Rep("Happy.wav","inverse.wav")
 ```
@@ -264,13 +264,13 @@ Inverse_Rep("Happy.wav","inverse.wav")
 
 # 5. Graficación comparativa de dos señales y su transformada de fourier
 
-## Funcionamiento
+## 5.1. Funcionamiento
 
 Ajusta el eje x al dominio y escala correcta (Frecuencia (Hz) y Tiempo (s). Posteriormente grafica los datos del audio/señal de un único canal (mono) con ayuda de la libreria Matplotlib, siendo de fácil configuración pues ya vien con los argumentos necesarios para la comparación de dos archivos de audio.
 
 Para graficar comparativamente dos audios basta con llamar llamar la función **AudioGraphing(Graph_Title,data_1,rate_1,audio1_title,data_2,rate_2,audio2_title)** o si desea comparar su transformada rápida de fourier **FFT_Graphing(Graph_Title,data_1,rate_1,audio1_title,data_2,rate_2,audio2_title)**.
 
-## Código de la función de graficación comparativa
+## 5.2. Código de la función de graficación comparativa
 ```python
 def AudioGraphing(Graph_Title,data_1,rate_1,audio1_title,data_2,rate_2,audio2_title):
         """
@@ -315,13 +315,13 @@ def AudioGraphing(Graph_Title,data_1,rate_1,audio1_title,data_2,rate_2,audio2_ti
         plt.show()
 ```
 
-## Demostración graficación comparativa
+## 5.3. Demostración graficación comparativa
 ```python
 AudioGraphing("Señal filtrada VS sin filtrar",data,rate,"Señal sin filtrar",data_2,rate_2,f"Señal filtrada")
 ```
 ![Comparative graphing example](https://alejandrohiguera.codes/AudioProcessing/files/graph7.png)
 
-## Código de la función de graficación comparativa FFT
+## 5.4. Código de la función de graficación comparativa FFT
 ```python
 def FFT_Graphing(Graph_Title,data_1,rate_1,audio1_title,data_2,rate_2,audio2_title):
     """
@@ -371,7 +371,7 @@ def FFT_Graphing(Graph_Title,data_1,rate_1,audio1_title,data_2,rate_2,audio2_tit
     plt.show()
 ```
 
-## Demostración graficación comparativa FFT
+## 5.5. Demostración graficación comparativa FFT
 Poder graficar las frecuencias de dos audios mediante la transformada rápida defourier brinda información valiosa acerca del contenido de los dos audios a comparar.
 
 ```python
@@ -390,7 +390,7 @@ Un filtro EMA o de media móvil exponencial es uno de los filtros digitales más
 2. Poco uso de CPU.
 3. Se puede configurar fácilmente un filtrado de paso bajo o paso alto.
 
-## Funcionamiento del filtro de paso bajo
+## 6.1. Funcionamiento del filtro de paso bajo
 ![Filtros de paso bajo](http://www.dsprelated.com/josimages_new/filters/img85.png)
 
 Este tipo de filtro se caracteriza por el paso de las frecuencias más bajas y la atenuación de las frecuencias más altas, lo que lo posiciona como útil para la disminución del ruido de alta frecuencia.
@@ -405,7 +405,7 @@ Donde:
 - x[i]=Valor muestreado de la señal.
 - y[i-1]=Valor filtrado anterior.
 
-### Código de la función:
+### 6.1.1. Código de la función:
 ```python
 def Lowpass(data,alpha):
     """
@@ -436,7 +436,7 @@ def Lowpass(data,alpha):
     filtered=np.array(filtered,dtype=data.dtype)
     return filtered
 ```
-## Funcionamiento del filtro de paso alto:
+## 6.2. Funcionamiento del filtro de paso alto:
 
 ![Filtros de paso alto](https://microcontrollerslab.com/wp-content/uploads/2018/11/2-Bode-of-high-pass-filter.jpg)
 
@@ -486,9 +486,9 @@ def Highpass(data,alpha):
     filtered=np.array(filtered,dtype=data.dtype)
     return filtered
 ```
-## Factor alpha y la frecuencia de corte en el filtrado
+## 6.3. Factor alpha y la frecuencia de corte en el filtrado
 
-## Factor alpha y variación del filtrado de paso bajo:
+### 6.3.1. Factor alpha y variación del filtrado de paso bajo:
 A continuación se muestra algunas variaciones del filtrado al cambiar el factor alpha para el filtro EMA de paso bajo:
 
 ![FFT Lowpass alpha=0](https://alejandrohiguera.codes/AudioProcessing/files/fft_low_0.png)
@@ -508,7 +508,7 @@ A continuación se muestra algunas variaciones del filtrado al cambiar el factor
 ![FFT Lowpass alpha=1](https://alejandrohiguera.codes/AudioProcessing/files/fft_low_1.png)
 ![Lowpass alpha=1](https://alejandrohiguera.codes/AudioProcessing/files/low_1.png)
 
-## Factor alpha y variación del filtrado de paso alto:
+### 6.3.2. Factor alpha y variación del filtrado de paso alto:
 A continuación se muestra algunas variaciones del filtrado al cambiar el factor alpha para el filtro EMA de paso bajo:
 
 ![FFT Highpass alpha=0](https://alejandrohiguera.codes/AudioProcessing/files/fft_hp_0.png)
@@ -526,10 +526,12 @@ A continuación se muestra algunas variaciones del filtrado al cambiar el factor
 ![FFT Highpass alpha=1](https://alejandrohiguera.codes/AudioProcessing/files/fft_hp_1.png)
 ![Highpass alpha=1](https://alejandrohiguera.codes/AudioProcessing/files/hp_1.png)
 
-# 6.1. Ecualización de frecuencias bajas y altas.
+### 6.3.3. Relación del factor alpha y la frecuencia de corte:
+
+# 6.4. Ecualización de frecuencias bajas y altas.
 Para ello se selecciona un factor de filtro alpha y se aplica un filtro EMA LowPass/HighPass.
 
-#### Demostración:
+#### 6.4.1. Demostración:
 ```python
 alpha = 0.2 #@param {type:"slider", min:0, max:1, step:0.01}
 rate,data=ReadAudio("Happy.wav")
@@ -566,10 +568,10 @@ playAudio("lowpass.wav")
 *Highpass α=0.2*
 {% include highpass.html %}
 
-# 6.2 Limpieza de ruido de alta frecuencia
+# 6.5. Reducción de ruido de alta frecuencia
 Para ello se establece una frecuencia (Hz) de corte y se procede a aplicar un filtro EMA de paso bajo.
 
-#### Demostración:
+#### 6.5.1. Demostración:
 ```python
 fr=int(input("Especifique la frecuencia de corte en Hz  "))
 Frequency_Cutoff("low",fr,"hfnoise.wav","limpieza.wav")
@@ -605,12 +607,12 @@ playAudio("limpieza.wav")
 
 # 7. Combinación de dos archivos de audio
 
-#### Funcionamiento:
+#### 7.1. Funcionamiento:
 Para reproducir la combinación de dos audios basta con convertir las matrices de los audios a mono, promediar los valores de las matrices de entrada y el número de muestras por segundo.
 
 Él módulo permite la reproducción de un audio que combina los dos audios de entrada y guardar el archivo con el audio resultante. Para hacerlo basta llamar la función: **Inverse_Rep(input_filename,output_filename)**.
 
-##### Código de la función:
+##### 7.2. Código de la función:
 ```python
 def Combinar_Audios(audio1,audio2,output_filename):
     """
@@ -649,7 +651,7 @@ def Combinar_Audios(audio1,audio2,output_filename):
     print(f"El archivo se guardo con éxito como {output_filename}")
     return playAudio(output_filename)
 ```
-#### Demostración:
+#### 7.3. Demostración:
 Para la demostración se combinó una parte de la canción Happy de Pharrel Williams y de la canción Sweet Lies, en formato mono con una tasa de muestras por segundo de 44100.
 ```python
 Combinar_Audios("Happy.wav","sweet.wav","Combined.wav")
