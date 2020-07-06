@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Contact
+title: Jupyter Notebook
 tagline: Create a contact form and you are good to go
-ref: contact
+ref: notebook
 order: 1
 ---
 

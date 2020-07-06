@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Now
-tagline: What I'm doing now
-permalink: /now.html
-ref: now
+title: Instalación
+tagline: Como instalar el módulo
+permalink: /instalacion.html
+ref: instalacion
 order: 2
 ---
 

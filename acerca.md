@@ -1,8 +1,8 @@
 ---
 layout: page
-title: About
-tagline: A few more words about this theme
-permalink: /about.html
+title: Acerca del módulo
+tagline: Algunas demostraciones e información de las funciones
+permalink: /acerca.html
 ref: about
 order: 0
 ---
