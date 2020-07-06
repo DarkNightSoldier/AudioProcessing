@@ -13,10 +13,10 @@
 
 # Programa de manipulación de audio WAV en Google Colaboratory
 
-## [](#1-introduccion) 1. Introducción
+## [1. Introducción](#1-introduccion)
 
 
-## [](#2-instalacion) 2. Instalación del módulo
+## [2. Instalación del módulo](#2-instalacion)
 ```python
 pip install colabaudiopr_es
 ```
