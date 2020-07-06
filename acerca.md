@@ -191,6 +191,7 @@ def Lowpass(data,alpha):
 ## Funcionamiento del filtro de paso alto:
 
 ![Filtros de paso alto](https://microcontrollerslab.com/wp-content/uploads/2018/11/2-Bode-of-high-pass-filter.jpg)
+
 Este tipo de filtro se caracteriza por el paso de las frecuencias más altas y la atenuación de las frecuencias más bajas, lo que lo posiciona como útil para la disminución del ruido de baja frecuencia.
 
 El filtro EMA de paso alto consiste en obtener un valor filtrado a partir de la aplicación de la siguiente expresión con cada uno de los datos de la matriz del audio mono:
