@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Jupyter Notebook
+title: Notebook
 tagline: Create a contact form and you are good to go
 permalink: /notebook.html
 ref: notebook

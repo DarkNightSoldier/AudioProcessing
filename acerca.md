@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Acerca del módulo
-tagline: Algunas demostraciones e información de las funciones
+title: Acerca
+tagline: Algunas demostraciones e información de las funciones del módulo
 permalink: /acerca.html
 ref: acerca
 order: 0
