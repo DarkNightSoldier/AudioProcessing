@@ -38,7 +38,7 @@ Para abrir el Notebook en **Google Colaboratory**:
     1. [Funcionamiento del filtro de paso bajo](#61-funcionamiento-del-filtro-de-paso-bajo)
         * [Código de la función](#611-código-de-la-función)
     2. [Funcionamiento del filtro de paso alto](#62-funcionamiento-del-filtro-de-paso-alto)
-        * [Código de la función](#621-código-de-la-función))
+        * [Código de la función](#621-código-de-la-función)
     3. [Factor alpha y la frecuencia de corte en el filtrado](#63-factor-alpha-y-la-frecuencia-de-corte-en-el-filtrado)
         * [Factor alpha y variación del filtrado de paso bajo](#631-factor-alpha-y-variación-del-filtrado-de-paso-bajo)
         * [Factor alpha y variación del filtrado de paso alto](#632-factor-alpha-y-variación-del-filtrado-de-paso-alto)
