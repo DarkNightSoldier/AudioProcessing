@@ -36,8 +36,16 @@ Como proyecto para el curso de Introducción a las Ciencias de la Computación e
 El módulo **colabaudiopr-es** provee herramientas básicas y facilidades para la edición y análisis de audio en formato .wav. Puede se instalado con pip install, dado que se encuentra publicado en pipy.org. Este ntegra las librerias Numpy, Scipy y Matplotlib para desplegar más de 10 funciones integradas.
 
 ## 2. Instalación del módulo
+Para el instalar el módulo use el Instalador de Paquetes de Python (PIP).
+
 ```python
 pip install colabaudiopr_es
 ```
+
+Posteriormente importe todas las funciones de la libreria:
+```python
+from colabaudiopr_es import *
+```
+
 ## 3. Algunas funcionalidades
 ## 4. Conclusión del proyecto
