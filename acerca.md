@@ -13,19 +13,19 @@ Para abrir el Notebook en **Google Colaboratory**:
 
 # Contenido:
 1. [Reproducción de audio](#1-reproducción-de-audio)
-    1. [Código de la función](#código-de-la-función)
-    2. [Demostración](#demostración)
+    1. [Código de la función](#11-código-de-la-funciónn)
+    2. [Demostración](#12-demostración)
 2. [Funciones de lectura y escritura de audio](#2-funciones-de-lectura-y-escritura-de-audio)
-    1. [Función de lectura de audio]()
-    2. [Función de escritura de audio]()
-    3. [Función de conversión de estéreo a mono]()
+    1. [Función de lectura de audio](#21-lectura-de-audio)
+    2. [Función de escritura de audio](#22-escritura-de-audio)
+    3. [Función de conversión de estéreo a mono](#23-conversión-de-estéreo-a-mono)
 3. [Reproducción de audio a velocidad rápida o lenta](#3-reproducción-de-audio-a-velocidad-rápida-o-lenta)
-    1. [Funcionamiento](#funcionamiento-1)
-    2. [Código de la función](#código-de-la-función-2)
-    3. [Demostración reproducción audio a velocidad lenta](#demostración-reproducción-audio-a-velocidad-lenta)
-    4. [Demostración reproducción audio a velocidad rápida](#demostración-reproducción-audio-a-velocidad-rápida)
+    1. [Funcionamiento](#31-funcionamiento)
+    2. [Código de la función](#32-código-de-la-función)
+    3. [Demostración reproducción audio a velocidad lenta](#33-demostración-reproducción-audio-a-velocidad-lenta)
+    4. [Demostración reproducción audio a velocidad rápida](#34-demostración-reproducción-audio-a-velocidad-rápida)
 4. [Reproducción de audio hacia atrás](#4-reproducción-de-audio-hacia-atrás)
-    1. [Funcionamiento](#funcionamiento-2)
+    1. [Funcionamiento](#41-funcionamiento)
     2. [Código de la función](#código-de-la-función-3)
     3. [Demostración](#demostración-1)
 5. [Graficación comparativa de dos señales y su transformada de fourier](#5-graficación-comparativa-de-dos-señales-y-su-transformada-de-fourier)
@@ -232,7 +232,7 @@ Speed_Rep("Happy.wav",Velocidad=1.65,"fast.wav")
 Para reproducir el audio hacia atrás basta con leer la matriz desde atrás hacia adelante, conservando la misma tasa de muestras por segundo.
 
 Él módulo permite la reproducción de audio hacia atrás y guardar el archivo con el audio resultante. Para hacerlo basta llamar la función: **Inverse_Rep(input_filename,output_filename)**.
-##### Código de la función:
+##### 4.2. Código de la función:
 ```python
 def Inverse_Rep(input_filename,output_filename):
     """
@@ -255,7 +255,7 @@ def Inverse_Rep(input_filename,output_filename):
     print(f"El archivo se guardo con éxito como {output_filename}")
     return playAudio(output_filename)
 ```
-#### 4.2. Demostración:
+#### 4.3. Demostración:
 ```python
 Inverse_Rep("Happy.wav","inverse.wav")
 ```
