@@ -31,26 +31,26 @@ Para abrir el Notebook en **Google Colaboratory**:
 5. [Graficación comparativa de dos señales y su transformada de fourier](#5-graficación-comparativa-de-dos-señales-y-su-transformada-de-fourier)
     1. [Funcionamiento](#51-funcionamiento)
     2. [Código de la función graficación comparativa](#52-código-de-la-función-de-graficación-comparativa)
-    3. [Demostración graficación comparativa](#53-demostración)
-    4. [Código de la función graficación comparativa FFT](#código-de-la-función-de-graficación-comparativa-fft)
-    5. [Demostración graficación comparativa FFT](#demostración-y)
+    3. [Demostración graficación comparativa](#53-demostración-graficación-comparativa)
+    4. [Código de la función graficación comparativa FFT](#54-código-de-la-función-de-graficación-comparativa-fft)
+    5. [Demostración graficación comparativa FFT](##55-demostración-graficación-comparativa-fft)
 6. [Filtros EMA de paso bajo y paso alto](#6-filtros-ema-de-paso-bajo-y-paso-alto)
-    1. [Funcionamiento del filtro de paso bajo](#funcionamiento-del-filtro-de-paso-bajo)
-        * [Código de la función](#código-de-la-funcion-4)
-    2. [Funcionamiento del filtro de paso alto](#funcionamiento-del-filtro-de-paso-alto)
-        * [Código de la función](#código-de-la-funcion-5)
-    3. [Factor alpha y la frecuencia de corte en el filtrado](#factor-alpha-y-la-frecuencia-de-corte-en-el-filtrado)
-        * [Factor alpha y variación del filtrado de paso bajo](#factor-alpha-y-variación-del-filtrado-de-paso-bajo)
-        * [Factor alpha y variación del filtrado de paso alto](#factor-alpha-y-variación-del-filtrado-de-paso-alto)
-        * [Relación del factor alpha y la frecuencia de corte](#relación-del-factor-alpha-y-la-frecuencia-de-corte)
-    4. [Ecualización de frecuencias bajas y altas]()
-        * [Demostración](#demostración-2)
-    5. [Reducción de ruido de alta frecuencia]()
-        * [Demostración](demostración-3)
+    1. [Funcionamiento del filtro de paso bajo](#61-funcionamiento-del-filtro-de-paso-bajo)
+        * [Código de la función](#611-código-de-la-función)
+    2. [Funcionamiento del filtro de paso alto](#62-funcionamiento-del-filtro-de-paso-alto)
+        * [Código de la función](#621-código-de-la-función))
+    3. [Factor alpha y la frecuencia de corte en el filtrado](#63-factor-alpha-y-la-frecuencia-de-corte-en-el-filtrado)
+        * [Factor alpha y variación del filtrado de paso bajo](#631-factor-alpha-y-variación-del-filtrado-de-paso-bajo)
+        * [Factor alpha y variación del filtrado de paso alto](#632-factor-alpha-y-variación-del-filtrado-de-paso-alto)
+        * [Relación del factor alpha y la frecuencia de corte](#633-relación-del-factor-alpha-y-la-frecuencia-de-corte)
+    4. [Ecualización de frecuencias bajas y altas](#64-ecualización-de-frecuencias-bajas-y-altas)
+        * [Demostración](#641-demostración)
+    5. [Reducción de ruido de alta frecuencia](#65-reducción-de-ruido-de-alta-frecuencia)
+        * [Demostración](#651-demostración)
 7. [Combinación de dos archivos de audio](#7-combinación-de-dos-archivos-de-audio)
-    1. [Funcionamiento](#funcionamiento-3)
-    2. [Código de la función](#código-de-la-funcion-6)
-    3. [Demostración](demostración-4)
+    1. [Funcionamiento](#71-funcionamiento)
+    2. [Código de la función](#72-código-de-la-función)
+    3. [Demostración](#73-demostración)
 
 
 # 1. Reproducción de audio
@@ -372,7 +372,7 @@ def FFT_Graphing(Graph_Title,data_1,rate_1,audio1_title,data_2,rate_2,audio2_tit
 ```
 
 ## 5.5. Demostración graficación comparativa FFT
-Poder graficar las frecuencias de dos audios mediante la transformada rápida defourier brinda información valiosa acerca del contenido de los dos audios a comparar.
+Poder graficar las frecuencias de dos audios mediante la transformada rápida de fourier brinda información valiosa acerca del contenido de los dos audios a comparar.
 
 ```python
 FFT_Graphing("Señal filtrada VS sin filtrar",data,rate,"Señal sin filtrar",data_2,rate_2,f"Señal filtrada")
@@ -456,7 +456,7 @@ Donde:
 - x[i]=Valor muestreado de la señal.
 - y[i-1]=Valor filtrado anterior.
 
-### Código de la función:
+### 6.2.1. Código de la función:
 ```python
 def Highpass(data,alpha):
     """
