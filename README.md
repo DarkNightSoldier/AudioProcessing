@@ -4,6 +4,7 @@
 [![Open In NbViewer](https://user-images.githubusercontent.com/2791223/29387450-e5654c72-8294-11e7-95e4-090419520edb.png)](https://nbviewer.jupyter.org/github/DarkNightSoldier/AudioProcessing/blob/master/Procesamiento_Audio.ipynb)
 [![PyPI version](https://badge.fury.io/py/colabaudiopr_es.svg)](https://badge.fury.io/py/colabaudiopr_es)
 
+<p align="center"><img src="https://alejandrohiguera.codes/AudioProcessing/files/banner-cs.svg" width="100%"></p>
 
 # Programa de manipulación de audio WAV en Google Colaboratory
 
