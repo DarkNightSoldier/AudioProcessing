@@ -9,6 +9,8 @@
 # Programa de manipulación de audio WAV en Google Colaboratory
 
 ### *Github Page del proyecto:* [alejandrohiguera.codes/AudioProcessing](https://alejandrohiguera.codes/AudioProcessing/)
+### *Repositorio del módulo* [https://github.com/DarkNightSoldier/colabaudiopr_es](https://github.com/DarkNightSoldier/colabaudiopr_es)
+### *Repositorio del Notebook de Colab* (https://github.com/DarkNightSoldier/AudioProcessing)(https://github.com/DarkNightSoldier/AudioProcessing)
 
 ## Contenido
 
