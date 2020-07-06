@@ -16,8 +16,9 @@ Para abrir el Notebook en **Google Colaboratory**:
 2. [Funciones de lectura y escritura de audio](#2-funciones-de-lectura-y-escritura-de-audio)
 3. [Reproducción de audio a velocidad rápida o lenta](#3-reproducción-de-audio-a-velocidad-rápida-o-lenta)
 4. [Reproducción de audio hacia atrás](#4-reproducción-de-audio-hacia-atrás)
-5. [Filtros EMA de paso bajo y paso alto](#5-filtros-EMA-de-paso-bajo-y-paso-alto)
-6. [Combinación de dos archivos de audio](#6-combinación-de-dos-archivos-de-audio)
+5. [Graficación comparativa de dos señales y su transformada de fourier](#5-graficación-comparativa-de-dos-señales-y-su-transformada-de-fourier)
+6. [Filtros EMA de paso bajo y paso alto](#6-filtros-EMA-de-paso-bajo-y-paso-alto)
+7. [Combinación de dos archivos de audio](#7-combinación-de-dos-archivos-de-audio)
 
 
 # [](#header-1) 1. Reproducción de audio
@@ -137,7 +138,9 @@ Inverse_Rep("Happy.wav","inverse.wav")
 *Se guardó con éxito el archivo como inverse.wav*
 {% include inverse.html %}
 
-# 5. Filtros EMA de paso bajo y paso alto
+# 5. Graficación comparativa de dos señales y su transformada de fourier
+
+# 6. Filtros EMA de paso bajo y paso alto
 
 ![Filtros de paso bajo y alto](https://i.stack.imgur.com/UJOhE.gif)
 
@@ -361,7 +364,7 @@ playAudio("limpieza.wav")
 ```
 {% include limpieza.html %}
 
-# 6. Combinación de dos archivos de audio
+# 7. Combinación de dos archivos de audio
 
 #### Funcionamiento:
 Para reproducir la combinación de dos audios basta con convertir las matrices de los audios a mono, promediar los valores de las matrices de entrada y el número de muestras por segundo.
