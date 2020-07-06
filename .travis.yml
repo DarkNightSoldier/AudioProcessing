@@ -1,7 +1,9 @@
 language: ruby
 cache: bundler
 sudo: false
-rvm: 2.6
+rvm:
+- 2.2
+- jruby
 
 install: script/bootstrap
 script: script/cibuild
