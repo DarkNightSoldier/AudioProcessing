@@ -6,10 +6,16 @@
 
 <p align="center"><img src="https://alejandrohiguera.codes/AudioProcessing/files/banner-cs.svg" width="100%"></p>
 
+## Contenido
+
+1. [Introducción] (#1-estructura-del-curso)
+2. [Instalación del módulo]
+
 # Programa de manipulación de audio WAV en Google Colaboratory
 
-## Instalación del módulo
+## 1. Introducción
+
+## 2. Instalación del módulo
 ```python
 pip install colabaudiopr_es
 ```
-
