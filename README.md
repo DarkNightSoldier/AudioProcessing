@@ -16,7 +16,7 @@
 
 **Versión** 1.0
 
-### *Link al repositorio de Python Packages PyPi:* [pypi.org/project/colabaudiopr_es](https://pypi.org/project/colabaudiopr_es)
+### *Link a PyPi:* [pypi.org/project/colabaudiopr_es](https://pypi.org/project/colabaudiopr_es)
 ### *Github Page del proyecto:* [alejandrohiguera.codes/AudioProcessing](https://alejandrohiguera.codes/AudioProcessing/)
 ### *Repositorio del módulo* [github.com/DarkNightSoldier/colabaudiopr_es](https://github.com/DarkNightSoldier/colabaudiopr_es)
 ### *Repositorio del Notebook de G. Colab* [github.com/DarkNightSoldier/AudioProcessing](https://github.com/DarkNightSoldier/AudioProcessing)
@@ -33,7 +33,7 @@
 
 Como proyecto para el curso de Introducción a las Ciencias de la Computación en el semestre 2020-1S desarrollé un notebok en Google Colaboratory para el análisis y modificación de audio en un formato wav, que viene acompañado del módulo **colabaudiopr-es** para proveer un diseño modular al Notebook, el cuál está disponible para su instalación desde pip.
 
-El módulo **colabaudiopr-es** provee herramientas básicas y facilidades para la edición y análisis de audio en formato .wav. Puede ser instalado con el instalador de Paquetes de Python (PIP), dado que se encuentra publicado en el Índice de paquetes de Pythonpipy.org. Este integra las librerias Numpy, Scipy y Matplotlib para desplegar más de 10 funciones integradas que son muy útiles para la manipulación de archivos en el formato .wav.
+El módulo **colabaudiopr-es** provee herramientas básicas y facilidades para la edición y análisis de audio en formato .wav. Puede ser instalado con el instalador de Paquetes de Python (PIP), dado que se encuentra publicado en el Índice de paquetes de Python pipy.org. Este integra las librerias Numpy, Scipy y Matplotlib para desplegar más de 10 funciones integradas que son muy útiles para la manipulación de archivos en el formato .wav.
 
 ## 2. Instalación del módulo
 Para el instalar el módulo use el Instalador de Paquetes de Python (PIP).
