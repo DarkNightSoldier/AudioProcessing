@@ -11,6 +11,9 @@ Para abrir el Notebook en **Google Colaboratory**:
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DarkNightSoldier/AudioProcessing/blob/master/Procesamiento_Audio.ipynb)
 
+# Contenido del artículo:
+
+
 # [](#header-1) 1. Mostrar el reproductor de audio
 Él módulo incluye un reproductor de IPython Display, que se puede llamar fácilmente con la función: **playAudio("file.wav")**. Para la demostración se usó una parte de la canción Happy de Pharrel Williams en audio estéreo.
 
@@ -154,7 +157,108 @@ Donde:
 - x[i]=Valor muestreado de la señal.
 - y[i-1]=Valor filtrado anterior.
 
-# [](#header-4a) 4.a) Ecualización de frecuencias bajas y altas.
+### Código de la función:
+```python
+def Lowpass(data,alpha):
+    """
+    Filtro exponencial EMA de paso bajo que recibe una matriz con audio en
+    mono y retorna una matriz con audio en mono del mismo tipo con el Filtro
+    aplicado.
+
+    Parámetros
+    ----------
+    data: Matriz Numpy ndarray
+         Matriz con los datos de un audio mono.
+    alpha: float
+         Factor entre 0 y 1 que determina el suavizado y aplicación del filtro.
+
+    Retorna
+    ----------
+    filtered: numpy ndarray
+        Matriz de Numpy que contiene audio en mono filtrado, con el mismo dtype
+        del original.
+    """
+    f0=alpha*data[0]
+    filtered=[f0]
+    for i in range (1,len(data)):
+        #y[i] := α * x[i] + (1-α) * y[i-1]
+        f=alpha*data[i]+(1-alpha)*filtered[i-1]
+        filtered.append(f)
+
+    filtered=np.array(filtered,dtype=data.dtype)
+    return filtered
+```
+## Funcionamiento del filtro de paso alto:
+
+![Filtros de paso alto](https://microcontrollerslab.com/wp-content/uploads/2018/11/2-Bode-of-high-pass-filter.jpg)
+Este tipo de filtro se caracteriza por el paso de las frecuencias más altas y la atenuación de las frecuencias más bajas, lo que lo posiciona como útil para la disminución del ruido de baja frecuencia.
+
+El filtro EMA de paso alto consiste en obtener un valor filtrado a partir de la aplicación de la siguiente expresión con cada uno de los datos de la matriz del audio mono:
+
+y[i]=x[i]-lowpass[i]
+
+Es decir:
+
+y[i]=x[i]-(alpha*x[i] + (1-alpha) * y[i-1])
+
+Donde:
+- y[i]=Valor filtrado.
+- alpha=Factor de filtrado (0-1).
+- x[i]=Valor muestreado de la señal.
+- y[i-1]=Valor filtrado anterior.
+
+### Código de la función:
+```python
+def Highpass(data,alpha):
+    """
+    Filtro exponencial EMA de paso alto que recibe una matriz con audio en
+    mono y retorna una matriz con audio en mono del mismo tipo con el Filtro
+    aplicado.
+
+    Parámetros
+    ----------
+    data: Matriz Numpy ndarray
+         Matriz con los datos de un audio mono.
+    alpha: float
+         Factor entre 0 y 1 que determina el suavizado y aplicación del filtro.
+
+    Retorna
+    ----------
+    filtered: numpy ndarray
+        Matriz de Numpy que contiene audio en mono filtrado, con el mismo dtype
+        del original.
+    """
+    f_Lowpass=Lowpass(data,alpha)
+    filtered=[]
+    for i in range(len(data)):
+        f=data[i]-f_Lowpass[i]
+        filtered.append(f)
+
+    filtered=np.array(filtered,dtype=data.dtype)
+    return filtered
+```
+## 4.a) Acerca del factor alpha en el filtrado y la frecuencia de corte:
+
+## Factor alpha y variación del filtrado de paso bajo:
+A continuación se muestra algunas variaciones del filtrado al cambiar el factor alpha para el filtro EMA de paso bajo:
+
+![FFT Lowpass alpha=0](https://alejandrohiguera.codes/AudioProcessing/files/fft_low_0.png)
+![Lowpass alpha=0](https://alejandrohiguera.codes/AudioProcessing/files/low_0.png)
+![FFT Lowpass alpha=0.2](https://alejandrohiguera.codes/AudioProcessing/files/fft_low_02.png)
+![Lowpass alpha=0.2](https://alejandrohiguera.codes/AudioProcessing/files/low_02.png)
+![FFT Lowpass alpha=0.4](https://alejandrohiguera.codes/AudioProcessing/files/fft_low_04.png)
+![Lowpass alpha=0.4](https://alejandrohiguera.codes/AudioProcessing/files/low_04.png)
+![FFT Lowpass alpha=0.6](https://alejandrohiguera.codes/AudioProcessing/files/fft_low_06.png)
+![Lowpass alpha=0.6](https://alejandrohiguera.codes/AudioProcessing/files/low_06.png)
+![FFT Lowpass alpha=0.6](https://alejandrohiguera.codes/AudioProcessing/files/fft_low_06.png)
+![Lowpass alpha=0.6](https://alejandrohiguera.codes/AudioProcessing/files/low_06.png)
+![FFT Lowpass alpha=0.8](https://alejandrohiguera.codes/AudioProcessing/files/fft_low_08.png)
+![Lowpass alpha=0.8](https://alejandrohiguera.codes/AudioProcessing/files/low_08.png)
+![FFT Lowpass alpha=1](https://alejandrohiguera.codes/AudioProcessing/files/fft_low_1.png)
+![Lowpass alpha=1](https://alejandrohiguera.codes/AudioProcessing/files/low_1.png)
+
+
+# [](#header-4b) 4.b) Ecualización de frecuencias bajas y altas.
 Para ello se selecciona un factor de filtro alpha y se aplica un filtro EMA LowPass/HighPass.
 
 #### Demostración:
@@ -194,7 +298,7 @@ playAudio("lowpass.wav")
 *Highpass α=0.2*
 {% include highpass.html %}
 
-# [](#header-4b) 4.b) Limpieza de ruido de alta frecuencia
+# [](#header-4c) 4.c) Limpieza de ruido de alta frecuencia
 Para ello se establece una frecuencia (Hz) de corte y se procede a aplicar un filtro EMA de paso bajo.
 
 #### Demostración:
