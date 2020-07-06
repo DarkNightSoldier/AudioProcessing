@@ -13,7 +13,7 @@ Para abrir el Notebook en **Google Colaboratory**:
 
 # Contenido:
 1. [Reproducción de audio](#1-reproducción-de-audio)
-    1. [Código de la función](#11-código-de-la-funciónn)
+    1. [Código de la función](#11-código-de-la-función)
     2. [Demostración](#12-demostración)
 2. [Funciones de lectura y escritura de audio](#2-funciones-de-lectura-y-escritura-de-audio)
     1. [Función de lectura de audio](#21-lectura-de-audio)
@@ -397,11 +397,11 @@ Este tipo de filtro se caracteriza por el paso de las frecuencias más bajas y l
 
 El filtro EMA de paso bajo consiste en obtener un valor filtrado a partir de la aplicación de la siguiente expresión con cada uno de los datos de la matriz del audio mono:
 
-y[i]= alpha*x[i] + (1-alpha) * y[i-1]
+[y[i]= alpha*x[i] + (1-alpha) * y[i-1]](http://latex2png.com/pngs/63355e28cd624ff12c24969723ad5f0a.png)
 
 Donde:
 - y[i]=Valor filtrado.
-- alpha=Factor de filtrado (0-1).
+- α=Factor de filtrado (0-1).
 - x[i]=Valor muestreado de la señal.
 - y[i-1]=Valor filtrado anterior.
 
@@ -444,11 +444,11 @@ Este tipo de filtro se caracteriza por el paso de las frecuencias más altas y l
 
 El filtro EMA de paso alto consiste en obtener un valor filtrado a partir de la aplicación de la siguiente expresión con cada uno de los datos de la matriz del audio mono:
 
-y[i]=x[i]-lowpass[i]
+[y[i]=x[i]-lowpass[i]](http://latex2png.com/pngs/13ae5022aa95018a04e5936d53c6573d.png)
 
 Es decir:
 
-y[i]=x[i]-(alpha*x[i] + (1-alpha) * y[i-1])
+[y[i]=x[i]-(alpha*x[i] + (1-alpha) * y[i-1])](http://latex2png.com/pngs/a564033f3d700be67d17a70051f84c54.png)
 
 Donde:
 - y[i]=Valor filtrado.
