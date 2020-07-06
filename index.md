@@ -8,10 +8,6 @@
 layout: home
 ---
 
-Cayman Blog Theme is a clean, responsive blogging theme for Jekyll. It is inspired by the Cayman Theme for Github Pages, which can be greatly used for single projects but not as blogging platform.
+El módulo colabaudiopr-es provee herramientas básicas y facilidades para la edición y análisis en formato .wav. Puede se instalado con pip install, dado que se encuentra publicado en pipy.org. Para saber más de su instalación vaya a la pestaña de Instalación.
 
-This theme has instead all you need to start today blogging with Jekyll, and no effort: pages, posts, few social buttons. Try loading this on mobile too.
-
-Have a look at the Github page for more information.
-
-You find this descriptive text in the `index.md` file, so you can change it, or remove it completely, according to your needs.
+Integra las librerias Numpy, Scipy y Matplotlib para desplegar más de 10 funciones integradas en el módulo, para saber más de sus funciones vaya a la pestaña de Información, donde encontrará algunas de las demostraciones de las funciones de la libreria.
