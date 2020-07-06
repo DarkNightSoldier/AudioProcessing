@@ -27,7 +27,7 @@
 1. [Introducción](#1-introducción)
 2. [Instalación del módulo](#2-instalación-del-módulo)
 3. [Algunas funcionalidades](#3-algunas-funcionalidades)
-4. [Conclusión del proyecto](#4-conclusión del proyecto)
+4. [Conclusión del proyecto](#4-conclusión-del-proyecto)
 
 ## 1. Introducción
 
