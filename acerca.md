@@ -11,10 +11,16 @@ Para abrir el Notebook en **Google Colaboratory**:
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DarkNightSoldier/AudioProcessing/blob/master/Procesamiento_Audio.ipynb)
 
-# Contenido del artículo:
+# Contenido:
+1. [Reproducción de audio](#1-reproducción-de-audio)
+2. [Funciones de lectura y escritura de audio](#3-funciones-de-lectura-y-escritura-de-audio)
+3. [Reproducción de audio a velocidad rápida o lenta](#2-reproducción-de-audio-a-velocidad-rápida-o-lenta)
+4. [Reproucción de audio hacia atras](#4-reproducción-de-audio-hacia-atras)
+5. [Filtros EMA de paso bajo y paso alto](#5-filtros-EMA-de-paso-bajo-y-paso-alto)
+6. [Combinación de dos archivos de audio](#6-combinación-de-dos-archivos-de-audio)
 
 
-# [](#header-1) 1. Mostrar el reproductor de audio
+# [](#header-1) 1. Reproducción de audio
 Él módulo incluye un reproductor de IPython Display, que se puede llamar fácilmente con la función: **playAudio("file.wav")**. Para la demostración se usó una parte de la canción Happy de Pharrel Williams en audio estéreo.
 
 ##### Código de la función:
@@ -45,8 +51,8 @@ playAudio("Happy.wav")
 ```
 {% include happy.html %}
 
-
-# [](#header-2) 2. Reproducción de audio a velocidad rápida o lenta:
+# 2. Funciones de lectura y escritura de audio
+# 3. Reproducción de audio a velocidad rápida o lenta
 
 #### Funcionamiento:
 Para reproducir el audio a mayor velocidad basta con aumentar la tasa de muestras por segundo y para disminuirla basta con disminuir la tasa de muestras por segundo.
@@ -96,7 +102,7 @@ Speed_Rep("Happy.wav",Velocidad=1.65,"fast.wav")
 {% include fast.html %}
 
 
-# [](#header-3) 3. Reproducción de audio desde atrás:
+# 4. Reproducción de audio hacia atrás
 #### Funcionamiento:
 Para reproducir el audio hacia atrás basta con leer la matriz desde atrás hacia adelante, conservando la misma tasa de muestras por segundo.
 
@@ -131,7 +137,7 @@ Inverse_Rep("Happy.wav","inverse.wav")
 *Se guardó con éxito el archivo como inverse.wav*
 {% include inverse.html %}
 
-# [](#header-4) 4. Filtros EMA de paso bajo y paso alto
+# 5. Filtros EMA de paso bajo y paso alto
 
 ![Filtros de paso bajo y alto](https://i.stack.imgur.com/UJOhE.gif)
 
@@ -355,7 +361,7 @@ playAudio("limpieza.wav")
 ```
 {% include limpieza.html %}
 
-# [](#header-5) 5. Combinación de dos archivos de audio
+# 6. Combinación de dos archivos de audio
 
 #### Funcionamiento:
 Para reproducir la combinación de dos audios basta con convertir las matrices de los audios a mono, promediar los valores de las matrices de entrada y el número de muestras por segundo.
