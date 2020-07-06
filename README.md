@@ -6,7 +6,7 @@
 
 <p align="center"><img src="https://alejandrohiguera.codes/AudioProcessing/files/banner-cs.svg" width="100%"></p>
 
-# Programa de manipulación de audio WAV en Google Colaboratory
+# Notebook para la manipulación de audio WAV en Google Colaboratory
 
 **Nombre:** Alejandro Higuera Castro
 
