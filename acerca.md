@@ -544,6 +544,8 @@ Donde:
 
 fc=Frecuencia de corte
 
+En conclusión, un aumento de la frecuencia de corte, implica un aumento del factor alpha y qué tanto suaviza la señal.
+
 # 6.4. Ecualización de frecuencias bajas y altas.
 Para ello se selecciona un factor de filtro alpha y se aplica un filtro EMA LowPass/HighPass.
 
