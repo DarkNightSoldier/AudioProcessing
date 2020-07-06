@@ -29,23 +29,23 @@ Para abrir el Notebook en **Google Colaboratory**:
   * [Demostración](#demostración-1)
 5. [Graficación comparativa de dos señales y su transformada de fourier](#5-graficación-comparativa-de-dos-señales-y-su-transformada-de-fourier)
   * [Funcionamiento](#funcionamiento-3)
-  * [Código de la función graficación comparativa](#código-de-la-función-graficación-comparativa)
+  * [Código de la función graficación comparativa](#código-de-la-función-de-graficación-comparativa)
   * [Demostración graficación comparativa](#demostración-x)
-  * [Código de la función graficación comparativa FFT](#código-de-la-función-graficación-comparativa-fft)
+  * [Código de la función graficación comparativa FFT](#código-de-la-función-de-graficación-comparativa-fft)
   * [Demostración graficación comparativa FFT](#demostración-y)
 6. [Filtros EMA de paso bajo y paso alto](#6-filtros-ema-de-paso-bajo-y-paso-alto)
   * [Funcionamiento del filtro de paso bajo](#funcionamiento-del-filtro-de-paso-bajo)
-    - [Código de la función](#código-de-la-funcion-4)
+    * [Código de la función](#código-de-la-funcion-4)
   * [Funcionamiento del filtro de paso alto](#funcionamiento-del-filtro-de-paso-alto)
-    - [Código de la función](#código-de-la-funcion-5)
+    * [Código de la función](#código-de-la-funcion-5)
   * [Factor alpha y la frecuencia de corte en el filtrado](#factor-alpha-y-la-frecuencia-de-corte-en-el-filtrado)
-    - [Factor alpga y variación del filtrado de paso bajo](#factor-alpha-y-variación-del-filtrado-de-paso-bajo)
-    - [Factor alpga y variación del filtrado de paso bajo](#factor-alpha-y-variación-del-filtrado-de-paso-bajo)
-    - [Relación del factor alpha y la frecuencia de corte](#relación-del-factor-alpha-y-la-frecuencia-de-corte)
+    * [Factor alpga y variación del filtrado de paso bajo](#factor-alpha-y-variación-del-filtrado-de-paso-bajo)
+    * [Factor alpga y variación del filtrado de paso bajo](#factor-alpha-y-variación-del-filtrado-de-paso-bajo)
+    * [Relación del factor alpha y la frecuencia de corte](#relación-del-factor-alpha-y-la-frecuencia-de-corte)
   * [6.1. Ecualización de frecuencias bajas y altas]()
-    - [Demostración](#demostración-2)
+    * [Demostración](#demostración-2)
   * [6.2. Reducción de ruido de alta frecuencia]()
-    - [Demostración](demostración-3)
+    * [Demostración](demostración-3)
 7. [Combinación de dos archivos de audio](#7-combinación-de-dos-archivos-de-audio)
   * [Funcionamiento](#funcionamiento-3)
   * [Código de la función](#código-de-la-funcion-6)
@@ -175,6 +175,115 @@ Inverse_Rep("Happy.wav","inverse.wav")
 {% include inverse.html %}
 
 # 5. Graficación comparativa de dos señales y su transformada de fourier
+
+## Funcionamiento
+
+## Código de la función de graficación comparativa
+```python
+def AudioGraphing(Graph_Title,data_1,rate_1,audio1_title,data_2,rate_2,audio2_title):
+        """
+        Grafica un audio/señal en el dominio tiempo, en el eje y se muestra la
+        señal y en el eje x el tiempo.
+
+        Parámetros
+        ----------
+        Graph_Title: string
+            Título de la gráfica.
+        data_1: numpy ndarray
+            Matriz con audio en mono.
+        rate_1: int
+            Muestras por segundo del audio.
+        audio1_title: string
+            Nombre a mostrar en la gráfica.
+        data_2: numpy ndarray
+            Matriz con audio en mono.
+        rate_2: int
+                Muestras por segundo del audio.
+        audio2_title: string
+            Nombre a mostrar en la gráfica.
+
+        Retorna
+        --------
+        Gráfico de Matplotlib con los audios de entrada, en el eje x la amplitud
+        y en el eje y el tiempo en segundos.
+        """
+        plt.title(Graph_Title)
+        plt.xlabel('Tiempo (s)')
+        plt.ylabel('Amplitud')
+
+        data_1=ConvertToMono(data_1)
+        tiempo_1=np.arange(len(data_1))/float(rate_1)
+
+        data_2=ConvertToMono(data_2)
+        tiempo_2=np.arange(len(data_2))/float(rate_2)
+
+        plt.fill_between(tiempo_1,data_1,color='b',label=audio1_title)
+        plt.fill_between(tiempo_2,data_2,color='m',label=audio2_title)
+        plt.legend(loc='upper right', borderaxespad=0.)
+        plt.show()
+```
+
+## Demostración graficación comparativa
+```python
+AudioGraphing("Señal filtrada VS sin filtrar",data,rate,"Señal sin filtrar",data_2,rate_2,f"Señal filtrada")
+```
+![Comparative graphing example](https://alejandrohiguera.codes/files/graph7.png)
+
+## Código de la función de graficación comparativa FFT
+```python
+def FFT_Graphing(Graph_Title,data_1,rate_1,audio1_title,data_2,rate_2,audio2_title):
+    """
+    Grafica la transformada de fourier de dos audios, donde el eje x se
+    muestra como la frecuencia en Hertz y el eje y la amplitud. Esto permite
+    comparar de manera objetiva dos audios en su dominio frecuencia.
+
+    Parámetros
+    ----------
+    Graph_Title: string
+        Título de la gráfica.
+    data_1: numpy ndarray
+        Matriz con audio en mono.
+    rate_1: int
+        Muestras por segundo del audio.
+    audio1_title: string
+        Nombre a mostrar en la gráfica.
+    data_2: numpy ndarray
+        Matriz con audio en mono.
+    rate_2: int
+            Muestras por segundo del audio.
+    audio2_title: string
+        Nombre a mostrar en la gráfica.
+
+    Retorna
+    --------
+    Gráfico de Matplotlib con la Transformada Rápida de Fourier de los audios de
+    entrada.
+    """
+    plt.title(Graph_Title)
+    plt.xlabel("Frecuencia (Hz)")
+    plt.ylabel("Amplitud")
+
+    fft_data_1=abs(fft(data_1))
+    frecs_1=fftfreq(len(fft_data_1),(1/rate_1))
+    x1=frecs_1[:(len(fft_data_1)//2)]
+    y1=fft_data_1[:(len(fft_data_1)//2)]
+
+    fft_data_2=abs(fft(data_2))
+    frecs_2=fftfreq(len(fft_data_2),(1/rate_2))
+    x2=frecs_2[:(len(fft_data_2)//2)]
+    y2=fft_data_2[:(len(fft_data_2)//2)]
+
+    plt.plot(x1,y1,color="r",label=audio1_title)
+    plt.plot(x2,y2,color="g",label=audio2_title)
+    plt.legend(loc='upper right', borderaxespad=0.)
+    plt.show()
+```
+
+## Demostración graficación comparativa FFT
+```python
+AudioGraphing("Señal filtrada VS sin filtrar",data,rate,"Señal sin filtrar",data_2,rate_2,f"Señal filtrada")
+```
+![Comparative fft graphing example](https://alejandrohiguera.codes/files/graph8.png)
 
 # 6. Filtros EMA de paso bajo y paso alto
 
