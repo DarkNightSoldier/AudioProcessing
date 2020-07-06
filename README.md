@@ -8,7 +8,7 @@
 
 # Programa de manipulación de audio WAV en Google Colaboratory
 
-### *Sitio web del proyecto:* [alejandrohiguera.codes/AudioProcessing](https://alejandrohiguera.codes/AudioProcessing/)
+### *Github Page del proyecto:* [alejandrohiguera.codes/AudioProcessing](https://alejandrohiguera.codes/AudioProcessing/)
 
 ## Contenido
 
