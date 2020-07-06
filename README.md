@@ -9,7 +9,7 @@
 ## Contenido
 
 1. [Introducción](#1-introduccion)
-2. [Instalación del módulo](#2-instlacion-del-modulo)
+2. [Instalación del módulo](#2-instlación-del-modulo)
 
 # Programa de manipulación de audio WAV en Google Colaboratory
 
