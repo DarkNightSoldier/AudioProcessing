@@ -16,10 +16,10 @@
 
 **Versión** 1.0
 
-### *Link al repositorio de Python Packages PyPi:* (https://pypi.org/project/colabaudiopr_es)[https://pypi.org/project/colabaudiopr_es]
+### *Link al repositorio de Python Packages PyPi:* (pypi.org/project/colabaudiopr_es)[https://pypi.org/project/colabaudiopr_es]
 ### *Github Page del proyecto:* [alejandrohiguera.codes/AudioProcessing](https://alejandrohiguera.codes/AudioProcessing/)
-### *Repositorio del módulo* [https://github.com/DarkNightSoldier/colabaudiopr_es](https://github.com/DarkNightSoldier/colabaudiopr_es)
-### *Repositorio del Notebook de G. Colab.* (https://github.com/DarkNightSoldier/AudioProcessing)(https://github.com/DarkNightSoldier/AudioProcessing)
+### *Repositorio del módulo* [github.com/DarkNightSoldier/colabaudiopr_es](https://github.com/DarkNightSoldier/colabaudiopr_es)
+### *Repositorio del Notebook de G. Colab* (github.com/DarkNightSoldier/AudioProcessing)(https://github.com/DarkNightSoldier/AudioProcessing)
 
 
 ## Contenido
