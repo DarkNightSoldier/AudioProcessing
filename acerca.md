@@ -502,6 +502,11 @@ A continuación se muestra algunas variaciones del filtrado al cambiar el factor
 ![FFT Lowpass alpha=1](https://alejandrohiguera.codes/AudioProcessing/files/fft_low_1.png)
 ![Lowpass alpha=1](https://alejandrohiguera.codes/AudioProcessing/files/low_1.png)
 
+A partir de ello es posible notar que:
+- Un valor muy cercano o igual a α=1 nos proporciona una señal muy parecida a la original, casi sin filtrar.
+- Un valor igual a α=0 nos proporciona una señal nula, sin información, totalmente filtrada.
+- A medida de que el factor α se acerca a 0 se atenuan más las frecuencias altas.
+
 ### 6.3.2. Factor alpha y variación del filtrado de paso alto:
 A continuación se muestra algunas variaciones del filtrado al cambiar el factor alpha para el filtro EMA de paso bajo:
 
@@ -520,11 +525,24 @@ A continuación se muestra algunas variaciones del filtrado al cambiar el factor
 ![FFT Highpass alpha=1](https://alejandrohiguera.codes/AudioProcessing/files/fft_hp_1.png)
 ![Highpass alpha=1](https://alejandrohiguera.codes/AudioProcessing/files/hp_1.png)
 
+A partir de ello es posible notar que:
+- Un valor muy cercano o igual a α=0 nos proporciona una señal muy parecida a la original, casi sin filtrar.
+- Un valor igual a α=1 nos proporciona una señal nula, sin información, totalmente filtrada.
+- A medida de que el factor α se acerca a 1 se atenuan más las frecuencias bajas.
+
 ### 6.3.3. Relación del factor alpha y la frecuencia de corte:
 
 La relación entre la frecuencia de corte y el factor alpha está dada por la fórmula:
 
 ![alpha=(2*math.pi*dt*frequency)/((2*math.pi*dt*frequency)+1)](http://latex2png.com/pngs/f437e1b9b3917ce909e3cc04847d676c.png)
+
+Donde:
+
+α=Factor de filtrado
+
+Δt=Cambio de tiempo (![dt=1/samplerate](http://latex2png.com/pngs/f1e8f0723a0c68a12ff6cfb63e40f47b.png))
+
+fc=Frecuencia de corte
 
 # 6.4. Ecualización de frecuencias bajas y altas.
 Para ello se selecciona un factor de filtro alpha y se aplica un filtro EMA LowPass/HighPass.
