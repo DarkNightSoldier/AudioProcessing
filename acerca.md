@@ -21,11 +21,12 @@ Para abrir el Notebook en **Google Colaboratory**:
 3. [Reproducción de audio a velocidad rápida o lenta](#3-reproducción-de-audio-a-velocidad-rápida-o-lenta)
   * [Funcionamiento](#funcionamiento-1)
   * [Código de la función](#código-de-la-función-2)
-  * [Demostración](#demostración-1)
+  * [Demostración reproducción audio a velocidad lenta](#demostración-reproducción-audio-a-velocidad-lenta)
+  * [Demostración reproducción audio a velocidad rápida](#demostración-reproducción-audio-a-velocidad-rápida)
 4. [Reproducción de audio hacia atrás](#4-reproducción-de-audio-hacia-atrás)
   * [Funcionamiento](#funcionamiento-2)
   * [Código de la función](#código-de-la-función-3)
-  * [Demostración](#demostración-2)
+  * [Demostración](#demostración-1)
 5. [Graficación comparativa de dos señales y su transformada de fourier](#5-graficación-comparativa-de-dos-señales-y-su-transformada-de-fourier)
   * [Funcionamiento](#funcionamiento-3)
   * [Código de la función graficación comparativa](#código-de-la-función-graficación-comparativa)
@@ -42,13 +43,13 @@ Para abrir el Notebook en **Google Colaboratory**:
     - [Factor alpga y variación del filtrado de paso bajo](#factor-alpha-y-variación-del-filtrado-de-paso-bajo)
     - [Relación del factor alpha y la frecuencia de corte](#relación-del-factor-alpha-y-la-frecuencia-de-corte)
   * [6.1. Ecualización de frecuencias bajas y altas]()
-    - [Demostración](#demostración-3)
+    - [Demostración](#demostración-2)
   * [6.2. Reducción de ruido de alta frecuencia]()
-    - [Demostración](demostración-4)
+    - [Demostración](demostración-3)
 7. [Combinación de dos archivos de audio](#7-combinación-de-dos-archivos-de-audio)
   * [Funcionamiento](#funcionamiento-3)
   * [Código de la función](#código-de-la-funcion-6)
-  * [Demostración](demostración-5)
+  * [Demostración](demostración-4)
 
 
 # [](#header-1) 1. Reproducción de audio
@@ -83,6 +84,10 @@ playAudio("Happy.wav")
 {% include happy.html %}
 
 # 2. Funciones de lectura y escritura de audio
+
+#### Código de la función:
+
+#### Demostración:
 
 # 3. Reproducción de audio a velocidad rápida o lenta
 
@@ -162,7 +167,7 @@ def Inverse_Rep(input_filename,output_filename):
     print(f"El archivo se guardo con éxito como {output_filename}")
     return playAudio(output_filename)
 ```
-##### Demostración:
+#### Demostración:
 ```python
 Inverse_Rep("Happy.wav","inverse.wav")
 ```
