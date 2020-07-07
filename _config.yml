@@ -1,12 +1,12 @@
 title: Módulo de procesamiento de audio
 description: Un proyecto de Alejandro Higuera C para INTRO CS UN-2026573 2020-1S.
-show_downloads: false
+show_downloads: true
 
 baseurl: "/AudioProcessing" # change this to the subpath of your site, e.g. /blog. Leave it empty if you don't need it.
 url: "https://alejandrohiguera.codes" # change this to the base hostname & protocol for your site
 
 
-google_analytics:
+google_analytics: UA-171784808-1
 
 # cayman-blog date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
