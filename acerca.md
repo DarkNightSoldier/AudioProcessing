@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Acerca
+title: Información
 tagline: Algunas demostraciones e información de las funciones del módulo
 permalink: /acerca.html
 ref: acerca
