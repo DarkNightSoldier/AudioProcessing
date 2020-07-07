@@ -9,9 +9,9 @@
 
 **Nombre:** Alejandro Higuera Castro
 
-**Fecha de publicación** 5 de julio de 2020
+**Fecha de publicación** 6 de julio de 2020
 
-**Versión** 1.0
+**Versión** 1.1
 
 ### *Link a PyPi:* [pypi.org/project/colabaudiopr_es](https://pypi.org/project/colabaudiopr_es)
 ### *Github Page del proyecto:* [alejandrohiguera.codes/AudioProcessing](https://alejandrohiguera.codes/AudioProcessing/)
@@ -36,12 +36,12 @@ El módulo **colabaudiopr_es** provee herramientas básicas y facilidades para l
 Para el instalar el módulo use el Instalador de Paquetes de Python (PIP).
 
 ```python
-pip install colabaudiopr_es
+pip install ColabAudioProcessing
 ```
 
 Posteriormente importe todas las funciones de la libreria:
 ```python
-from colabaudiopr_es import *
+from ColabAudioProcessing.audio import *
 ```
 
 ## 3. Algunas funcionalidades
