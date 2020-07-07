@@ -7,6 +7,17 @@ ref: instalacion
 order: 2
 ---
 
-This is a [now page](https://nownownow.com/about), and it was inspired by [the /now movement](https://sivers.org/nowff). If you have your own site, [you should make one](https://nownownow.com/about), too.
+# ¿Cómo instalar el módulo?
 
+Para el instalar el módulo use el Instalador de Paquetes de Python (PIP).
+
+```python
+pip install ColabAudioProcessing
+```
+
+Posteriormente importe todas las funciones de la libreria:
+
+```python
+from ColabAudioProcessing.audio import *
+```
 [Volver a la página de inicio]({{ '/' | absolute_url }})

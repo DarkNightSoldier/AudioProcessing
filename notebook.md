@@ -9,6 +9,6 @@ order: 1
 
 A continuación se muestra el Notebook desarrollado:
 
-{% include notebook.html max-width="600 px" %}
+{% include notebook.html%}
 
 [Volver a la página de inicio]({{ '/' | absolute_url }})
