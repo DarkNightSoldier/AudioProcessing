@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Instalación
-tagline: Como instalar el módulo
+tagline: ¿Cómo instalar el módulo?
 permalink: /instalacion.html
 ref: instalacion
 order: 2
