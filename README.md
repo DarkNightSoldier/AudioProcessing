@@ -69,7 +69,7 @@ Se puede leer en detalle acerca de las funcionalidades del proyecto en [alejandr
     2. [Código de la función graficación comparativa](https://alejandrohiguera.codes/AudioProcessing/acerca.html#52-código-de-la-función-de-graficación-comparativa)
     3. [Demostración graficación comparativa](https://alejandrohiguera.codes/AudioProcessing/acerca.html#53-demostración-graficación-comparativa)
     4. [Código de la función graficación comparativa FFT](https://alejandrohiguera.codes/AudioProcessing/acerca.html#54-código-de-la-función-de-graficación-comparativa-fft)
-    5. [Demostración graficación comparativa FFT](https://alejandrohiguera.codes/AudioProcessing/acerca.html#https://alejandrohiguera.codes/AudioProcessing/acerca.html#55-demostración-graficación-comparativa-fft)
+    5. [Demostración graficación comparativa FFT](https://alejandrohiguera.codes/AudioProcessing/acerca.html#55-demostración-graficación-comparativa-fft)
 6. [Filtros EMA de paso bajo y paso alto](https://alejandrohiguera.codes/AudioProcessing/acerca.html#6-filtros-ema-de-paso-bajo-y-paso-alto)
     1. [Funcionamiento del filtro de paso bajo](https://alejandrohiguera.codes/AudioProcessing/acerca.html#61-funcionamiento-del-filtro-de-paso-bajo)
         * [Código de la función](https://alejandrohiguera.codes/AudioProcessing/acerca.html#611-código-de-la-función)
