@@ -12,8 +12,6 @@
 
 **Fecha de publicación** 5 de julio de 2020
 
-**Licencia** GNU 3.0
-
 **Versión** 1.0
 
 ### *Link a PyPi:* [pypi.org/project/colabaudiopr_es](https://pypi.org/project/colabaudiopr_es)
