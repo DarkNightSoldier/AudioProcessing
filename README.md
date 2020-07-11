@@ -11,7 +11,7 @@
 
 **Fecha de publicación** 6 de julio de 2020
 
-**Versión** 1.1
+**Versión** 1.2
 
 ### *Link a PyPi:* [pypi.org/project/ColabAudioProcessing](https://pypi.org/project/ColabAudioProcessing)
 ### *Github Page del proyecto:* [alejandrohiguera.codes/AudioProcessing](https://alejandrohiguera.codes/AudioProcessing/)
