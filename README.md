@@ -86,3 +86,4 @@ Se puede leer en detalle acerca de las funcionalidades del proyecto en [alejandr
     2. [Código de la función](https://alejandrohiguera.codes/AudioProcessing/acerca.html#72-código-de-la-función)
     3. [Demostración](https://alejandrohiguera.codes/AudioProcessing/acerca.html#73-demostración)
     
+8. Ajuste de volumen de audio.
